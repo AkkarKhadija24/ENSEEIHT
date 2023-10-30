@@ -1,0 +1,75 @@
+Nom       : Akkar
+Prénom    : Khadija
+Groupe TP : N
+
+Les « ... » indiquent les endroits à compléter.
+
+=====[ Temps passé ]============================================================
+
+Ces informations de temps sont demandées à titre indicatif et ne sont pas
+prises en compte dans la notation du projet.
+
+
+* Temps passé sur la V1 : 10 heures 30 minutes
+* Temps passé sur la V2 : ... heures ... minutes
+
+Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
+
+
+=====[ Questions ]==============================================================
+
+--------------------------------------------------------------------------------
+Pourquoi l'exception OperationInterditeException ne peut pas être définie
+comme vérifiée par le compilateur ?
+--------------------------------------------------------------------------------
+
+Une exception vérifiée est une exception qui n'est ni Error ni RuntimeException,
+ et sait que le compilateur que tous les exceptions vérifiées propagées 
+par les méthodes sont prises en compte.
+Alors qu'on a l'exception OperationInterditeException hérite de RuntimeException 
+donc elle n'est pas vérifiées.
+
+
+
+
+--------------------------------------------------------------------------------
+Expliquer ce qu'il faut faire pour ajouter un nouveau niveau de jeu, par
+exemple la stratégie lente (C13).  Pour plus de précision, on numérotera
+les étapes à faire.
+--------------------------------------------------------------------------------
+
+(J'ai deja fait cette strategie).
+1. Créer une nouvelle classe qui implémente l'interface Strategie.
+2. Dans la classe Jouer, ajouter une nouvelle case dans la méthode creerNiveau
+qui lance le constructeur de la nouvelle classe "NiveauLent".
+
+
+--------------------------------------------------------------------------------
+Expliquer ce qui permet, dans votre conception, de changer dynamiquement
+(en cours d'exécution du programme) la stratégie d'un joueur (C14).
+--------------------------------------------------------------------------------
+
+Pour changer dynamiquement la stratégie j'ai essayé d'utiliser un argument par 
+exemple " -changer " qui signifie ( changer = true ) on aura par défaut changer
+égale à false. Et j'ai modifié l'arbitre de la manière suivante :
+
+  + J'ai ajouté une méthode "changeNiveau", et dans la méthode arbitrer j'ai 
+  ajouté un if (changer == true) au début de chaque tour dont on Demande au 
+  joueur s'il veut changer la stratégie :
+     . Si la réponse est oui on affiche les niveaux (par la méthode "afficherMenu")
+      avec des numéros.
+     . on demande au joueur de choisir un numéro.
+     . On change la stratégie grace à la méthode "changeNiveau".
+
+
+
+=====[ Explications ]===========================================================
+
+--------------------------------------------------------------------------------
+Donner ici les explications supplémentaires utiles à la compréhension du
+travail rendu.
+--------------------------------------------------------------------------------
+
+...
+
+--------------------------------------------------------------------------------

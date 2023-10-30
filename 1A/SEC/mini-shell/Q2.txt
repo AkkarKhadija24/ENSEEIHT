@@ -1,0 +1,26 @@
+Si le processus shell lance un fils et se met immédiatement en attente de lecture 
+de la prochaine ligne de commande, il est possible que l'affichage de l'invite de commande 
+("Akkar@Khadija:...>>>" dans l'exemple donné) se mélange avec l'exécution du processus fils, ce qui peut 
+entraîner un comportement inattendu. Pour illustrer cela, voici un exemple de session simple
+utilisant le code écrit pour la question 1 :
+
+Akkar@Khadija:...>>> ls
+fichier1.txt fichier2.txt
+Akkar@Khadija:...>>> pwd
+/home/utilisateur
+Akkar@Khadija:...>>> cd /var
+Akkar@Khadija:...>>> ls
+fichier3.txt repertoire1
+Akkar@Khadija:...>>> echo "Nouveau fichier" > fichier4.txt
+Akkar@Khadija:...>>> cat fichier4.txt
+Nouveau fichier
+Akkar@Khadija:...>>>
+ 
+Dans cet exemple, le processus shell lance les commandes "ls", "pwd", "cd", "echo",
+et "cat" en tant que processus fils, et se met immédiatement en attente de la prochaine 
+ligne de commande après avoir exécuté chaque commande. Cependant, comme le processus fils 
+s'exécute en parallèle avec le processus shell, il est possible que les sorties de ces 
+commandes (par exemple, les résultats de "ls", "pwd", "cat", etc.) se mélangent avec 
+l'affichage de l'invite de commande, ce qui peut rendre la sortie peu claire ou difficile
+à lire pour l'utilisateur. Pour éviter ce problème, j'ai utiliseé la fonction waitpid() qui 
+sert à éviter le chevauchement pendat l'affichage.

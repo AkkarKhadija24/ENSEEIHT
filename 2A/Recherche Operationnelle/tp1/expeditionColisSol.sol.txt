@@ -1,0 +1,49 @@
+c Problem:    
+c Rows:       22
+c Columns:    18
+c Non-zeros:  60
+c Status:     INTEGER OPTIMAL
+c Objective:  CoutTotal = 368 (MINimum)
+c
+s mip 22 18 o 368
+i 1 1
+i 2 1
+i 3 0
+i 4 2
+i 5 2
+i 6 0
+i 7 -2
+i 8 0
+i 9 -1
+i 10 -3
+i 11 0
+i 12 0
+i 13 -1
+i 14 -1
+i 15 -1
+i 16 0
+i 17 0
+i 18 0
+i 19 -599999998
+i 20 -599999998
+i 21 -599999998
+i 22 0
+j 1 0
+j 2 1
+j 3 0
+j 4 1
+j 5 0
+j 6 0
+j 7 0
+j 8 2
+j 9 2
+j 10 0
+j 11 0
+j 12 0
+j 13 0
+j 14 0
+j 15 1
+j 16 1
+j 17 1
+j 18 0
+e o f

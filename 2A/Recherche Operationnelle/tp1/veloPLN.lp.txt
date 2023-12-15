@@ -1,0 +1,16 @@
+\* Problem: AssemblagePLN *\
+
+Maximize
+ MargeTotale: + 700 Q(velosCargo) + 300 Q(velosStandards)
+
+Subject To
+ RespectEspaceMaximal: + 2.5 Q(velosCargo) + Q(velosStandards) <= 1500
+ ContrainteTemps: + 6 Q(velosCargo) + 5 Q(velosStandards) <= 6000
+ ContrainteQuantite(velosCargo): + Q(velosCargo) <= 700
+ ContrainteQuantite(velosStandards): + Q(velosStandards) <= 16668686
+
+Generals
+ Q(velosCargo)
+ Q(velosStandards)
+
+End

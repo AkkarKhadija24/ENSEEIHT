@@ -1,0 +1,72 @@
+data;
+
+# Ensemble des commandes
+set COMMANDS := 
+    command1
+    command2
+    command3;
+
+# Ensemble des produits
+set PRODUCTS := 
+    product1
+    product2;
+
+# Ensemble des magasins
+set STORES := 
+    store1
+    store2;
+
+# Ensemble des noeuds (représentant les différents sites)
+# set NODES := STORES union COMMANDS;
+
+# Ensemble des arcs entre les noeuds
+#set ARCS := 
+    #(store1, command1) (store1, command2) (store1, command3)
+    #(store2, command1) (store2, command2) (store2, command3)
+    #(store3, command1) (store3, command2) (store3, command3);
+
+# Distance/temps de trajet entre les sites i et j
+param Distance :=
+    store1 store1 0
+    store2 store2 0
+    store1 command1 5
+    command1 store1 5
+    store1 command2 8
+    command2 store1 8
+    store2 command1 6
+    command1 store2 6
+    store2 command2 9
+    command2 store2 9
+    store1 command3 15
+    command3 store1 15
+    store2 command3 18
+    command3 store2 18
+    store1 store2 3
+    store2 store1 3
+    command1 command1 0
+    command2 command2 0
+    command1 command2 5
+    command2 command1 5
+    command3 command3 0
+    command1 command3 10
+    command3 command1 10
+    command2 command3 5
+    command3 command2 5;
+  
+# Quantité de produit p dans la commande d
+param ProductQuantity :=
+    command1 product1 20   command1 product2 30
+    command2 product1 25   command2 product2 35
+    command3 product1 3    command3 product2 10;
+
+# Stock de produit p dans le magasin m
+param StockQuantity :=
+    store1 product1 50   store1 product2 60
+    store2 product1 60   store2 product2 70;
+
+# Caractéristiques des véhicules de transport
+param A := 1.18e-5;
+param B := 2.14e-1;
+param C := 0;
+
+end;

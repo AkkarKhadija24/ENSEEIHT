@@ -1,0 +1,168 @@
+\* Problem: LivreurPLNE *\
+
+Minimize
+ CoutTotal: + Voie(1,2) + Voie(1,3) + 10 Voie(1,4) + 12 Voie(1,5)
+ + 12 Voie(1,6) + Voie(2,1) + Voie(2,3) + 8 Voie(2,4) + 10 Voie(2,5)
+ + 11 Voie(2,6) + Voie(3,1) + Voie(3,2) + 8 Voie(3,4) + 11 Voie(3,5)
+ + 10 Voie(3,6) + 10 Voie(4,1) + 8 Voie(4,2) + 8 Voie(4,3) + Voie(4,5)
+ + Voie(4,6) + 12 Voie(5,1) + 10 Voie(5,2) + 11 Voie(5,3) + Voie(5,4)
+ + Voie(5,6) + 12 Voie(6,1) + 11 Voie(6,2) + 10 Voie(6,3) + Voie(6,4)
+ + Voie(6,5)
+
+Subject To
+ VentesRestantes(1,1): - 5 Voie(1,1) + Vreste(1,1) <= -0
+ VentesRestantes(1,2): - 5 Voie(1,2) + Vreste(1,2) <= -0
+ VentesRestantes(1,3): - 5 Voie(1,3) + Vreste(1,3) <= -0
+ VentesRestantes(1,4): - 5 Voie(1,4) + Vreste(1,4) <= -0
+ VentesRestantes(1,5): - 5 Voie(1,5) + Vreste(1,5) <= -0
+ VentesRestantes(1,6): - 5 Voie(1,6) + Vreste(1,6) <= -0
+ VentesRestantes(2,1): - 5 Voie(2,1) + Vreste(2,1) <= -0
+ VentesRestantes(2,2): - 5 Voie(2,2) + Vreste(2,2) <= -0
+ VentesRestantes(2,3): - 5 Voie(2,3) + Vreste(2,3) <= -0
+ VentesRestantes(2,4): - 5 Voie(2,4) + Vreste(2,4) <= -0
+ VentesRestantes(2,5): - 5 Voie(2,5) + Vreste(2,5) <= -0
+ VentesRestantes(2,6): - 5 Voie(2,6) + Vreste(2,6) <= -0
+ VentesRestantes(3,1): - 5 Voie(3,1) + Vreste(3,1) <= -0
+ VentesRestantes(3,2): - 5 Voie(3,2) + Vreste(3,2) <= -0
+ VentesRestantes(3,3): - 5 Voie(3,3) + Vreste(3,3) <= -0
+ VentesRestantes(3,4): - 5 Voie(3,4) + Vreste(3,4) <= -0
+ VentesRestantes(3,5): - 5 Voie(3,5) + Vreste(3,5) <= -0
+ VentesRestantes(3,6): - 5 Voie(3,6) + Vreste(3,6) <= -0
+ VentesRestantes(4,1): - 5 Voie(4,1) + Vreste(4,1) <= -0
+ VentesRestantes(4,2): - 5 Voie(4,2) + Vreste(4,2) <= -0
+ VentesRestantes(4,3): - 5 Voie(4,3) + Vreste(4,3) <= -0
+ VentesRestantes(4,4): - 5 Voie(4,4) + Vreste(4,4) <= -0
+ VentesRestantes(4,5): - 5 Voie(4,5) + Vreste(4,5) <= -0
+ VentesRestantes(4,6): - 5 Voie(4,6) + Vreste(4,6) <= -0
+ VentesRestantes(5,1): - 5 Voie(5,1) + Vreste(5,1) <= -0
+ VentesRestantes(5,2): - 5 Voie(5,2) + Vreste(5,2) <= -0
+ VentesRestantes(5,3): - 5 Voie(5,3) + Vreste(5,3) <= -0
+ VentesRestantes(5,4): - 5 Voie(5,4) + Vreste(5,4) <= -0
+ VentesRestantes(5,5): - 5 Voie(5,5) + Vreste(5,5) <= -0
+ VentesRestantes(5,6): - 5 Voie(5,6) + Vreste(5,6) <= -0
+ VentesRestantes(6,1): - 5 Voie(6,1) + Vreste(6,1) <= -0
+ VentesRestantes(6,2): - 5 Voie(6,2) + Vreste(6,2) <= -0
+ VentesRestantes(6,3): - 5 Voie(6,3) + Vreste(6,3) <= -0
+ VentesRestantes(6,4): - 5 Voie(6,4) + Vreste(6,4) <= -0
+ VentesRestantes(6,5): - 5 Voie(6,5) + Vreste(6,5) <= -0
+ VentesRestantes(6,6): - 5 Voie(6,6) + Vreste(6,6) <= -0
+ VentesSortiEntre(1): - Vreste(1,2) - Vreste(1,3) - Vreste(1,4)
+ - Vreste(1,5) - Vreste(1,6) + Vreste(2,1) + Vreste(3,1) + Vreste(4,1)
+ + Vreste(5,1) + Vreste(6,1) = -5
+ VentesSortiEntre(2): + Vreste(1,2) - Vreste(2,1) - Vreste(2,3)
+ - Vreste(2,4) - Vreste(2,5) - Vreste(2,6) + Vreste(3,2) + Vreste(4,2)
+ + Vreste(5,2) + Vreste(6,2) = 1
+ VentesSortiEntre(3): + Vreste(1,3) + Vreste(2,3) - Vreste(3,1)
+ - Vreste(3,2) - Vreste(3,4) - Vreste(3,5) - Vreste(3,6) + Vreste(4,3)
+ + Vreste(5,3) + Vreste(6,3) = 1
+ VentesSortiEntre(4): + Vreste(1,4) + Vreste(2,4) + Vreste(3,4)
+ - Vreste(4,1) - Vreste(4,2) - Vreste(4,3) - Vreste(4,5) - Vreste(4,6)
+ + Vreste(5,4) + Vreste(6,4) = 1
+ VentesSortiEntre(5): + Vreste(1,5) + Vreste(2,5) + Vreste(3,5)
+ + Vreste(4,5) - Vreste(5,1) - Vreste(5,2) - Vreste(5,3) - Vreste(5,4)
+ - Vreste(5,6) + Vreste(6,5) = 1
+ VentesSortiEntre(6): + Vreste(1,6) + Vreste(2,6) + Vreste(3,6)
+ + Vreste(4,6) + Vreste(5,6) - Vreste(6,1) - Vreste(6,2) - Vreste(6,3)
+ - Vreste(6,4) - Vreste(6,5) = 1
+ SortieClient(1): + Voie(1,1) + Voie(1,2) + Voie(1,3) + Voie(1,4)
+ + Voie(1,5) + Voie(1,6) = 1
+ SortieClient(2): + Voie(2,1) + Voie(2,2) + Voie(2,3) + Voie(2,4)
+ + Voie(2,5) + Voie(2,6) = 1
+ SortieClient(3): + Voie(3,1) + Voie(3,2) + Voie(3,3) + Voie(3,4)
+ + Voie(3,5) + Voie(3,6) = 1
+ SortieClient(4): + Voie(4,1) + Voie(4,2) + Voie(4,3) + Voie(4,4)
+ + Voie(4,5) + Voie(4,6) = 1
+ SortieClient(5): + Voie(5,1) + Voie(5,2) + Voie(5,3) + Voie(5,4)
+ + Voie(5,5) + Voie(5,6) = 1
+ SortieClient(6): + Voie(6,1) + Voie(6,2) + Voie(6,3) + Voie(6,4)
+ + Voie(6,5) + Voie(6,6) = 1
+ EntrerClient(1): + Voie(1,1) + Voie(2,1) + Voie(3,1) + Voie(4,1)
+ + Voie(5,1) + Voie(6,1) = 1
+ EntrerClient(2): + Voie(1,2) + Voie(2,2) + Voie(3,2) + Voie(4,2)
+ + Voie(5,2) + Voie(6,2) = 1
+ EntrerClient(3): + Voie(1,3) + Voie(2,3) + Voie(3,3) + Voie(4,3)
+ + Voie(5,3) + Voie(6,3) = 1
+ EntrerClient(4): + Voie(1,4) + Voie(2,4) + Voie(3,4) + Voie(4,4)
+ + Voie(5,4) + Voie(6,4) = 1
+ EntrerClient(5): + Voie(1,5) + Voie(2,5) + Voie(3,5) + Voie(4,5)
+ + Voie(5,5) + Voie(6,5) = 1
+ EntrerClient(6): + Voie(1,6) + Voie(2,6) + Voie(3,6) + Voie(4,6)
+ + Voie(5,6) + Voie(6,6) = 1
+
+Bounds
+ 0 <= Voie(1,1) <= 1
+ 0 <= Voie(1,2) <= 1
+ 0 <= Voie(1,3) <= 1
+ 0 <= Voie(1,4) <= 1
+ 0 <= Voie(1,5) <= 1
+ 0 <= Voie(1,6) <= 1
+ 0 <= Voie(2,1) <= 1
+ 0 <= Voie(2,2) <= 1
+ 0 <= Voie(2,3) <= 1
+ 0 <= Voie(2,4) <= 1
+ 0 <= Voie(2,5) <= 1
+ 0 <= Voie(2,6) <= 1
+ 0 <= Voie(3,1) <= 1
+ 0 <= Voie(3,2) <= 1
+ 0 <= Voie(3,3) <= 1
+ 0 <= Voie(3,4) <= 1
+ 0 <= Voie(3,5) <= 1
+ 0 <= Voie(3,6) <= 1
+ 0 <= Voie(4,1) <= 1
+ 0 <= Voie(4,2) <= 1
+ 0 <= Voie(4,3) <= 1
+ 0 <= Voie(4,4) <= 1
+ 0 <= Voie(4,5) <= 1
+ 0 <= Voie(4,6) <= 1
+ 0 <= Voie(5,1) <= 1
+ 0 <= Voie(5,2) <= 1
+ 0 <= Voie(5,3) <= 1
+ 0 <= Voie(5,4) <= 1
+ 0 <= Voie(5,5) <= 1
+ 0 <= Voie(5,6) <= 1
+ 0 <= Voie(6,1) <= 1
+ 0 <= Voie(6,2) <= 1
+ 0 <= Voie(6,3) <= 1
+ 0 <= Voie(6,4) <= 1
+ 0 <= Voie(6,5) <= 1
+ 0 <= Voie(6,6) <= 1
+
+Generals
+ Voie(1,1)
+ Voie(1,2)
+ Voie(1,3)
+ Voie(1,4)
+ Voie(1,5)
+ Voie(1,6)
+ Voie(2,1)
+ Voie(2,2)
+ Voie(2,3)
+ Voie(2,4)
+ Voie(2,5)
+ Voie(2,6)
+ Voie(3,1)
+ Voie(3,2)
+ Voie(3,3)
+ Voie(3,4)
+ Voie(3,5)
+ Voie(3,6)
+ Voie(4,1)
+ Voie(4,2)
+ Voie(4,3)
+ Voie(4,4)
+ Voie(4,5)
+ Voie(4,6)
+ Voie(5,1)
+ Voie(5,2)
+ Voie(5,3)
+ Voie(5,4)
+ Voie(5,5)
+ Voie(5,6)
+ Voie(6,1)
+ Voie(6,2)
+ Voie(6,3)
+ Voie(6,4)
+ Voie(6,5)
+ Voie(6,6)
+
+End

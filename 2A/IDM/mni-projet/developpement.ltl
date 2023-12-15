@@ -1,0 +1,11 @@
+op ready =  Conception_ready  /\ RedactionDoc_ready  /\ Programmation_ready  /\ RedactionTests_ready;
+op started =  Conception_started  /\ RedactionDoc_started  /\ Programmation_started  /\ RedactionTests_started;
+op running =  Conception_running  /\ RedactionDoc_running  /\ Programmation_running  /\ RedactionTests_running;
+op finished =  Conception_finished  /\ RedactionDoc_finished  /\ Programmation_finished  /\ RedactionTests_finished;
+[] (finished => dead);
+[] <> dead;
+[] (dead => finished);
+- <> finished;
+[] (finished => - <> ready /\ started /\ - <> running);
+[] (running => ready /\ started /\ - <> finished);
+[] (- <> started => - <> running /\ - <> finished);

@@ -1,0 +1,23 @@
+c Problem:    
+c Rows:       8
+c Columns:    6
+c Non-zeros:  12
+c Status:     OPTIMAL
+c Objective:  CoutTotal = 9.5 (MINimum)
+c
+s bas 8 6 f f 9.5
+i 1 u 2.5 -1
+i 2 u 1 -2
+i 3 b 0.5 0
+i 4 b 1 0
+i 5 b 0 0
+i 6 u 1 -1
+i 7 s -3 -2
+i 8 s -3 -3
+j 1 b 2.5 0
+j 2 b 1 0
+j 3 b 0.5 0
+j 4 b 1 0
+j 5 l 0 1
+j 6 b 1 0
+e o f

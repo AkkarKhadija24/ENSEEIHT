@@ -1,0 +1,32 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+###############################  Sets  ###############################
+
+set P;  # Ensemble des personnes
+set T;  # Ensemble des tâches
+
+################### Variables ###################
+
+var X{i in P, j in T}, binary;  # Variable binaire indiquant si la personne i est assignée à la tache j
+
+###################  Constants: Data to load   #########################
+
+param c{i in P, j in T}, >=0 integer;  # Score de préférence de la personne i pour la tache j
+
+################### Constraints ###################
+
+s.t. AssignPerson{i in P}:
+  sum{j in T} X[i, j] = 1;
+
+s.t. AssignTask{j in T}:
+  sum{i in P} X[i, j] = 1;
+
+###### Objective ######
+
+maximize MaximizePreference: 
+		sum{i in P, j in T} c[i, j] * X[i, j]; 
+
+end;

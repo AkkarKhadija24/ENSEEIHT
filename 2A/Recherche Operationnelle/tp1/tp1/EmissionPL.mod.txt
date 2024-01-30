@@ -1,0 +1,54 @@
+
+
+############################### Model ###############################
+
+############################### Sets ###############################
+
+set COMMANDS;  # Ensemble des commandes
+set PRODUCTS;  # Ensemble des produits
+set STORES;    # Ensemble des magasins
+
+# Ensemble des noeuds (représentant les différents sites)
+set NODES := STORES union COMMANDS;
+
+# Ensemble des arcs entre les noeuds
+set ARCS := {i in NODES, j in NODES: i!=j};
+
+################### Variables ###################
+
+var QuantityToDeliver{i in NODES, p in PRODUCTS, m in NODES}, >= 0;
+var DeliveryRoute{i in NODES, j in NODES}, binary;
+
+################### Constants: Data to load #########################
+
+param Distance{i in NODES, j in NODES} >= 0;  # Distance/temps de trajet entre les sites i et j
+
+param ProductQuantity{i in COMMANDS, p in PRODUCTS} >= 0;  # Quantité de produit p dans la commande d
+
+param StockQuantity{i in STORES, p in PRODUCTS} >= 0;  # Stock de produit p dans le magasin m
+
+# Caractéristiques des véhicules de transport
+param A;
+param B;
+param C;
+
+################### Constraints ###################
+
+# Aucun magasin ne peut faire livrer plus de produits qu'il n'en possède en stock
+s.t. StockConstraint{i in STORES, p in PRODUCTS}:
+    sum{j in COMMANDS} QuantityToDeliver[j, p, i] <= StockQuantity[i, p];
+
+# Chaque commande doit être attribuée à un magasin
+s.t. AssignCommand{i in COMMANDS}:
+    sum{j in STORES} DeliveryRoute[j, i] = 1;
+
+
+################ Objective ################
+
+# Minimisation des émissions polluantes
+minimize MinimizePollution:
+    sum{i in NODES, j in NODES, p in PRODUCTS} ((A * QuantityToDeliver[j, p, i] * Distance[i, j]
+    + B * Distance[i, j]
+    + C));
+
+end;

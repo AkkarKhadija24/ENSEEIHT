@@ -1,0 +1,15 @@
+c Problem:    
+c Rows:       4
+c Columns:    2
+c Non-zeros:  6
+c Status:     INTEGER OPTIMAL
+c Objective:  MargeTotale = 438400 (MAXimum)
+c
+s mip 4 2 o 438400
+i 1 1500
+i 2 5992
+i 3 232
+i 4 920
+j 1 232
+j 2 920
+e o f

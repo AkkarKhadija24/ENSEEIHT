@@ -1,0 +1,41 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set FLUIDES:= {1..2}; 
+set MAGASIN:= {1..3};
+set DEMANDE:= {1..2};
+
+
+################### Variables ###################
+
+var Q{i in MAGASIN, j in FLUIDES}, >=0; 
+
+###################  Constants: Data to load   #########################
+
+param Dfluide{i in DEMANDE, j in FLUIDES}, >=0;
+
+param Mstocks{i in MAGASIN, j in FLUIDES}, >=0;
+
+param Mcout{i in MAGASIN, j in FLUIDES}, >=0;
+
+################### Constraints ###################
+
+s.t. RespectQuantiteMax{i in MAGASIN, j in FLUIDES}:
+   Q[i,j] <= Mstocks[i,j];
+
+s.t. BonneAffectationDM{j in FLUIDES}:
+  sum{i in DEMANDE} Dfluide[i,j] = sum{i in MAGASIN} Q[i,j];
+
+
+###### Objective ######
+
+minimize CoutTotal: 
+		sum{i in MAGASIN, j in FLUIDES} Q[i,j]* Mcout[i,j]; 
+
+
+end;

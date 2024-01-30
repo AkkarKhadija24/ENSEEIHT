@@ -1,0 +1,53 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set COLIS:= {1..2}; 
+set MAGASIN:= {1..3};
+set DEMANDE:= {1..2};
+
+
+################### Variables ###################
+
+var Q{i in DEMANDE, j in COLIS, k in MAGASIN}, integer, >=0; 
+var Trajet{i in DEMANDE, j in MAGASIN}, binary, >=0; 
+
+###################  Constants: Data to load   #########################
+
+param Dcolis{i in DEMANDE, j in COLIS}, >=0;
+
+param Mstocks{i in MAGASIN, j in COLIS}, >=0;
+
+param Mcout{i in MAGASIN, j in COLIS}, >=0;
+
+param McoutFixe{i in DEMANDE, j in MAGASIN}, >=0;
+
+param McoutVar{i in DEMANDE, j in MAGASIN}, >=0;
+
+
+################### Constraints ###################
+
+s.t. RespectQuantiteMax{k in MAGASIN, j in COLIS}:
+   sum{i in DEMANDE} Q[i,j,k] <= Mstocks[k,j];
+
+s.t. BonneAffectationDM{i in DEMANDE, j in COLIS}:
+  Dcolis[i,j] = sum{k in MAGASIN} Q[i,j,k];
+
+s.t. cheminColisChoisi{i in DEMANDE, j in MAGASIN}:
+  Trajet[i,j] <= sum{k in COLIS} Q[i,k,j];
+
+s.t. cheminColisNonChoisi{i in DEMANDE, j in MAGASIN}:
+  sum{k in COLIS} Q[i,k,j] <= Trajet[i,j] * 600000000;
+
+###### Objective ######
+
+minimize CoutTotal: 
+		(sum{i in DEMANDE, j in MAGASIN} Trajet[i,j]* McoutFixe[i,j]) +
+        (sum{i in DEMANDE, j in COLIS, k in MAGASIN} Q[i,j,k]* (Mcout[k,j] + McoutVar[i,k])); 
+
+
+end;

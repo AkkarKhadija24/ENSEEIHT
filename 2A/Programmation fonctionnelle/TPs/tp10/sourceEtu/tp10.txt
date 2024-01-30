@@ -1,0 +1,1 @@
+begin on; move 5; repeat 10 begin on; move 5; turn 90; move 5; off; move 10; on; end; end

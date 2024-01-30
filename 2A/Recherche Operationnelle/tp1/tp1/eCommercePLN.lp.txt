@@ -1,0 +1,25 @@
+\* Problem: Colis *\
+
+Minimize
+ CoutTotal: + Q(1,1) + Q(1,2) + 2 Q(2,1) + 3 Q(2,2) + 3 Q(3,1)
+ + 2 Q(3,2)
+
+Subject To
+ RespectQuantiteMax(1,1): + Q(1,1) <= 2.5
+ RespectQuantiteMax(1,2): + Q(1,2) <= 1
+ RespectQuantiteMax(2,1): + Q(2,1) <= 1
+ RespectQuantiteMax(2,2): + Q(2,2) <= 2
+ RespectQuantiteMax(3,1): + Q(3,1) <= 2
+ RespectQuantiteMax(3,2): + Q(3,2) <= 1
+ BonneAffectationDM(1): - Q(1,1) - Q(2,1) - Q(3,1) = -3
+ BonneAffectationDM(2): - Q(1,2) - Q(2,2) - Q(3,2) = -3
+
+Generals
+ Q(1,1)
+ Q(1,2)
+ Q(2,1)
+ Q(2,2)
+ Q(3,1)
+ Q(3,2)
+
+End

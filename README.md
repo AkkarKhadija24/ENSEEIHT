@@ -1,6 +1,7 @@
 # ENSEEIHT
-# About
 Student projects during my schooling at ENSEEIHT engineer school.
+
+# About
 
 To download this repository on your own machine, open a terminal on **Linux** and type the command :
 

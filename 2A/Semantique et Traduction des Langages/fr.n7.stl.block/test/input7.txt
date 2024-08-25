@@ -1,0 +1,8 @@
+test {
+	int i = 1;
+	float t = (int) i;
+	typedef int Entier;
+    int l = 5;
+    int v = (int) l;
+    Entier k = (int) l;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="stylesStudent.css">
+
+    <style>
+        body {
+                background-image: url('imagesBackground/Loginbackground.avif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+        }
+
+    </style>
+
+ 
+
+</head>
+<body>
+    <div class="navbar">
+        <div center>
+        	<img src="public/imagesBackground/intern7eek.png" alt="Logo Inter7eek">
+        </div>
+
+        <span> Welcome To The Authentication Portal </span>
+
+        <span>INTERN7EEK</span>
+
+
+    </div>
+    <div class="loginContainer">
+        <h2> Login </h2>
+
+        <hr>
+        <div class="social-login">
+            <a href="https://accounts.google.com/v3/signin/identifier?dsh=S144513%3A1653082377225875&hl=fr&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AU9NCcw4jR480TAGwETevBN-CHxzawsRXfWaL2o7J4ZsDClhAFdK4mT7OJLNMI76HuAaeUL1Xs1p" class="google-login">
+            	<i class="fa fa-google"></i> Login with Google</a> <br>
+            <a href="https://www.linkedin.com/login/fr" class="linkedin-login">
+            	<i class="fa fa-linkedin"></i> Login with LinkedIn</a>
+        </div>
+        <br>
+
+        <form action="Servlet" method="post">
+
+
+            <div class="input-group">
+                <label for="username">Email Address </label>
+                <span class="input-group-addon"></span>
+                <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <br>
+
+            <div class="input-group">
+                <label for="password">Password </label>
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" id="password" name="password" required>
+            </div> <br>
+            
+            <input type="hidden" name="action" value="login">
+            <input type="submit" value="Login">
+
+        </form>
+        <a href="#">Forgot Password ?</a><br>
+        <a href="SignUpChoice.html">Create an account </a><br>        
+        
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>INTERN7EEK &copy; 2024</p>
+    </div>
+
+</body>
+</html>

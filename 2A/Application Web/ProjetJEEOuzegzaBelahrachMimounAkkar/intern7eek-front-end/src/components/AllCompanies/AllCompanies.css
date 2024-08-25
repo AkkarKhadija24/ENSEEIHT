@@ -1,0 +1,68 @@
+/* AllCompanies.css */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #555; /* Light gray color */
+}
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.company-card {
+  background-color: #f9f9f9; /* Very light gray background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 10px;
+  width: 48%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slightly darker shadow on hover */
+}
+
+.company-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #555; /* Light gray color */
+}
+
+.company-card p {
+  font-size: 1em;
+  color: #888; /* Medium gray color */
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #88BFFF; /* Light blue color */
+  transition: color 0.2s ease-in-out;
+}
+
+.back-link:hover {
+  color: #66A3FF; /* Slightly darker blue on hover */
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}

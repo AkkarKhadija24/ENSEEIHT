@@ -1,0 +1,9 @@
+test{
+	int i = 8;
+	if (i > 0) {
+		i = i - 1;
+	} else {
+		i = 2;
+	}
+	return i;
+}

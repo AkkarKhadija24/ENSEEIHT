@@ -1,0 +1,47 @@
+.studentSpaceContainer {
+    width: 700px;
+    margin: 70px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px);
+}
+
+.contentStudentSpace {
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8a2be2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white; /* Couleur du texte */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-content .input-group-addon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}

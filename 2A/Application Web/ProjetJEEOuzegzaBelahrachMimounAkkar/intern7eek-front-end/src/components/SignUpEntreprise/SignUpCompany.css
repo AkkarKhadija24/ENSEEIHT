@@ -1,0 +1,59 @@
+/* Ajoutez des styles CSS supplémentaires si nécessaire */
+/* Ne modifiez que les classes utilisées pour le formulaire de création de compte */
+
+.signupCompanyContainer {
+    width: 700px;
+    margin: 70px auto;
+    text-align: center;
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    padding: 20px;
+    /*border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px); /* Effet de flou */
+}
+
+.input-group-signupCompany {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group-signupCompany label {
+    flex: 1;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.input-group-signupCompany label svg {
+    margin-right: 5px;
+}
+
+.input-group-signupCompany input,
+.input-group-signupCompany select {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group-signupCompany select {
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

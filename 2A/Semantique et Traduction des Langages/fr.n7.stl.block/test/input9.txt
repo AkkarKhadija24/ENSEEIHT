@@ -1,0 +1,9 @@
+test{
+	
+	int identite(int a, int b) {
+		return a;
+	}
+	
+	int a = -4;
+	print identite(a, 6);
+}

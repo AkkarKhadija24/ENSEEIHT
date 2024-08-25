@@ -1,0 +1,30 @@
+/* CSS pour la page des candidatures */
+.applications-container {
+    padding: 20px;
+}
+
+.applications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.application-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.application-item:hover {
+    background-color: #f0f0f0;
+}
+
+.application-item p {
+    margin: 5px 0;
+}
+
+.error-message {
+    color: red;
+}

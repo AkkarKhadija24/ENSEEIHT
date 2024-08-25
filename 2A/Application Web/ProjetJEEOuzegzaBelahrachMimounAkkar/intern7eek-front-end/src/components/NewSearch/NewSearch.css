@@ -1,0 +1,97 @@
+/* NewSearch.css */
+
+.newSearchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.searchForm {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.input-group input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchForm button {
+  background-color: #8a2be2;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchForm button:hover {
+  background-color: #6a1bbd;
+}
+
+.resultsContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+.resultCard {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultCard h3 {
+  margin: 0 0 5px;
+  font-size: 1.2em;
+}
+
+.resultCard p {
+  margin: 0 0 10px;
+  font-size: 0.9em;
+}
+
+.resultCard button {
+  align-self: flex-start;
+  background-color: #8a2be2;
+  color: #ffffff;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.resultCard button:hover {
+  background-color: #6a1bbd;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

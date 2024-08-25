@@ -1,0 +1,7 @@
+test{
+	<int, int> c = <3,4>;
+	int first = 0;
+	int second = 0;
+	first = fst c;
+	second = snd c;
+}

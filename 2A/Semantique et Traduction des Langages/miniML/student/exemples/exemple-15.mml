@@ -1,0 +1,1 @@
+let s = ref 1 in (s := 1; s)

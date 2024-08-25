@@ -1,0 +1,10 @@
+test{
+	float e1 = 1.5;
+	float e2 = 2.3;
+	struct Point {float x; float y;} p1 =  {1, 2};
+	struct Point {float x; float y;} p2 =  {e1, e2}; 
+	
+	// Il ya encore un probleeeeme!!!!!!!
+	//int first = p1.y;
+	//return first;
+}

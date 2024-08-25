@@ -1,0 +1,48 @@
+/* Styles pour Login.html */
+
+.loginContainer {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px); /* Effet de flou */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+    border-radius: 20px; /* Coins arrondis */
+}
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+input[type="submit"] {
+    background-color: #ebd4ab ;
+    color: #000;
+    font-weight: bold; 
+    cursor: pointer;
+
+}
+input[type="submit"]:hover {
+    background-color: #800080;
+}
+
+
+#create-account-student {
+    color: #808080 ;
+    display: block; 
+    margin-top: 10px; 
+    text-decoration: underline;
+
+}
+
+#create-account-company {
+    color: #800080; 
+    display: block; 
+    text-decoration: underline;
+}

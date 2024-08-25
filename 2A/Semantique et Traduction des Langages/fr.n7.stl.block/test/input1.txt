@@ -1,0 +1,4 @@
+test{
+	typedef int Entier;
+	Entier l = 1;
+}

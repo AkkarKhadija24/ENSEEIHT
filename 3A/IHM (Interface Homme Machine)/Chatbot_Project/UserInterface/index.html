@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Pseudo-agent Ingescape</title>
+    <link rel="stylesheet" type="text/css" href="css/st.css">
+</head>
+
+<body>
+    <div class="container" style="background-color:#662d91;">
+        <br>
+        <div class="center-div">
+            Server URL <input type="text" id="serverURL" >
+            <input type="button" style="background-color: #1d1160;" value="Connect" onclick="setServerURL() " />
+            <div id="connectedToServer" style="vertical-align: middle; display:inline-block; border-radius: 30px; background: red; width:15px; height:15px"></div>
+        </div>
+        <br>
+        <div class="center-div">
+            <span id="name" style="font-size: 20px;">Chatbot - Commandes de vêtements</span>
+        </div>
+        <br>
+
+        <!-- Formulaire de commande -->
+        <div class="center-div">
+            <h3>Passer une commande</h3>
+            <form id="orderForm" style="background-color:#D8BFD8;">
+                <label for="type">Type :</label>
+                <select id="type">
+                    <option value="pull">Pull</option>
+                    <option value="chemise">Chemise</option>
+                    <option value="veste">Veste</option>
+                    <option value="jupe">Jupe</option>
+                    <option value="robe">Robe</option>
+                    <option value="short">Short</option>
+                    <option value="chaussettes">Chaussettes</option>
+                    <option value="sac">Sac</option>
+                    <option value="ceinture">Ceinture</option>
+                    <option value="cravate">Cravate</option>
+                    <option value="costume">Costume</option>
+                    <option value="blouson">Blouson</option>
+                    <option value="pantalon">Pantalon</option>
+                    <option value="manteau">Manteau</option>
+                    <option value="t-shirt">T-Shirt</option>
+                    <option value="chaussures">Chaussures</option>
+                    <option value="casquette">Casquette</option>
+                </select>
+                <br><br>
+
+                <label for="category">Catégorie :</label>
+<div class="category-buttons">
+    <select id="category">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="enfant">Enfant</option>
+    </select>
+        </div>
+                <br><br>
+
+                <label for="quantity">Quantité :</label>
+                <input type="number" id="quantity" min="1" value="1">
+                <br><br>
+
+                <label for="size">Taille :</label>
+                <select id="size">
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+                <br><br>
+
+                <label for="color">Couleur :</label>
+                <select id="color">
+                <option value="blanc">Blanc</option>
+                <option value="noir">Noir</option>
+                <option value="gris">Gris</option>
+                <option value="bleu">Bleu</option>
+                <option value="vert">Vert</option>
+                <option value="jaune">Jaune</option>
+                <option value="orange">Orange</option>
+                </select>
+                <br><br>
+                
+                <input type="button" value="Envoyer" onclick="submitOrder()">
+            </form>
+        </div>
+        <br>
+
+        <!-- Logs and messages -->
+        <div class="center-div">
+            <b>Logs des services</b>
+        </div>
+        <br>
+        <div class="center-div">
+            <textarea id="services_logs" cols="70" rows="5" style="overflow:auto;" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="js/ingescape.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+</body>
+</html>

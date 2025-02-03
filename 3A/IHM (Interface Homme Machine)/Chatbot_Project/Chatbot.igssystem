@@ -1,0 +1,1039 @@
+{
+    "extensions": {
+        "eventsTimeline": {
+            "events": [
+            ],
+            "patterns": [
+            ],
+            "timelines": [
+                {
+                    "eventInstances": [
+                    ],
+                    "name": "Timeline_1",
+                    "order": 0,
+                    "patternInstances": [
+                    ]
+                }
+            ]
+        },
+        "recordAndReplay": {
+            "filters": {
+            }
+        }
+    },
+    "library": {
+        "classes": [
+            {
+                "className": "UserInterface",
+                "color": 0,
+                "definition": {
+                    "attributes": [
+                        {
+                            "name": "message",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "reponse",
+                            "type": "STRING"
+                        }
+                    ],
+                    "inputs": [
+                        {
+                            "name": "Reception_rep",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Question",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "name": "recevoir_question_utilisateur"
+                        },
+                        {
+                            "name": "envoyer_question_au_backend"
+                        },
+                        {
+                            "name": "afficher_reponse_au_client"
+                        }
+                    ]
+                },
+                "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Un formulaire interactif</p></body></html>",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "b2114e46-9083-5c04-88f3-2c33757564f7",
+                "version": ""
+            },
+            {
+                "className": "Chatbot",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "Demande",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "output",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "name": "recevoir_demande_utilisateur"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "produit",
+                                    "type": "DATA"
+                                }
+                            ],
+                            "name": "interroger_stock"
+                        },
+                        {
+                            "name": "generer_reponse"
+                        },
+                        {
+                            "name": "envoyer_reponse_au_whiteboard"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "80c6e264-1c87-5d9c-b712-f6f65d690fa1",
+                "version": ""
+            },
+            {
+                "className": "Whiteboard",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "title",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "backgroundColor",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "labelsVisible",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "chatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "clear",
+                            "type": "IMPULSION"
+                        },
+                        {
+                            "name": "ui_command",
+                            "type": "STRING"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "lastChatMessage",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "lastAction",
+                            "type": "STRING"
+                        },
+                        {
+                            "name": "ui_error",
+                            "type": "STRING"
+                        }
+                    ],
+                    "services": [
+                        {
+                            "arguments": [
+                                {
+                                    "name": "message",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "chat"
+                        },
+                        {
+                            "name": "snapshot",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "base64Png",
+                                            "type": "DATA"
+                                        }
+                                    ],
+                                    "name": "snapshotResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "clear"
+                        },
+                        {
+                            "name": "showLabels"
+                        },
+                        {
+                            "name": "hideLabels"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "type",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "fill",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "stroke",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "strokeWidth",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addShape",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "text",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addText",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "base64",
+                                    "type": "DATA"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "width",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "height",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImage",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "addImageFromUrl",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "elementId",
+                                            "type": "INTEGER"
+                                        }
+                                    ],
+                                    "name": "elementCreated"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "remove",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "dx",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "dy",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "translate",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "x",
+                                    "type": "DOUBLE"
+                                },
+                                {
+                                    "name": "y",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "moveTo",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "property",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "setStringProperty",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementId",
+                                    "type": "INTEGER"
+                                },
+                                {
+                                    "name": "property",
+                                    "type": "STRING"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "DOUBLE"
+                                }
+                            ],
+                            "name": "setDoubleProperty",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "succeeded",
+                                            "type": "BOOL"
+                                        }
+                                    ],
+                                    "name": "actionResult"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getElementIds",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elementIds"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "getElements",
+                            "replies": [
+                                {
+                                    "arguments": [
+                                        {
+                                            "name": "jsonArray",
+                                            "type": "STRING"
+                                        }
+                                    ],
+                                    "name": "elements"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "118ec52d-5aba-5ee0-baa7-ae34d567f092",
+                "version": ""
+            },
+            {
+                "className": "Backend",
+                "color": 0,
+                "definition": {
+                    "inputs": [
+                        {
+                            "name": "input",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "output",
+                            "type": "IMPULSION"
+                        }
+                    ]
+                },
+                "description": "",
+                "icon": -1,
+                "package": "",
+                "plugin": "ingescape_class",
+                "uuid": "5324c2a2-846f-486a-81b2-f95eb06a5cf4",
+                "version": ""
+            }
+        ]
+    },
+    "systemViews": [
+        {
+            "children": [
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5500 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "96d360de-b284-4f26-b57c-3a750aaee87d"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:5000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "19c5aa42-3e60-42ba-8da7-f4779096e894"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "735de5a3-d330-4aa5-b98f-4b82fa75c6cb"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy_1 --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "615d019c-2762-4f27-ada1-387bfb4d75b7"
+                            }
+                        ]
+                    },
+                    "class": "b2114e46-9083-5c04-88f3-2c33757564f7",
+                    "comment": "",
+                    "height": 114,
+                    "name": "UserInterface",
+                    "simulationTime": 5000,
+                    "uuid": "3231851e-16f1-44fa-929b-efaae5b6937b",
+                    "width": 329,
+                    "x": 228.72871901095806,
+                    "y": -42.14051818535512
+                },
+                {
+                    "data": {
+                        "arguments": [
+                            {
+                                "text": "Question"
+                            },
+                            {
+                                "x": "10"
+                            },
+                            {
+                                "y": "0"
+                            },
+                            {
+                                "color": ""
+                            }
+                        ],
+                        "selectedAgentUuid": "b0eb6906-362a-4680-82ed-22cfa832c787",
+                        "selectedService": "addText"
+                    },
+                    "height": 188,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.servicecaller",
+                    "uuid": "b6d16571-84f7-41d3-880d-ec6ad5a2b616",
+                    "width": 246,
+                    "x": 97.2852910938521,
+                    "y": 395.45600244532375
+                },
+                {
+                    "data": {
+                        "arguments": [
+                            {
+                                "url": "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9.jpg"
+                            },
+                            {
+                                "x": "6"
+                            },
+                            {
+                                "y": "6"
+                            }
+                        ],
+                        "selectedAgentUuid": "b0eb6906-362a-4680-82ed-22cfa832c787",
+                        "selectedService": "addImageFromUrl"
+                    },
+                    "height": 188,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.servicecaller",
+                    "uuid": "3b541a5b-f174-43e7-b158-2060ba29cdb9",
+                    "width": 246,
+                    "x": -206.56863795872846,
+                    "y": 347.69820285851847
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "0f0862df-2d11-451d-90c5-bc2c73b9b543"
+                            }
+                        ]
+                    },
+                    "class": "80c6e264-1c87-5d9c-b712-f6f65d690fa1",
+                    "comment": "",
+                    "height": 114,
+                    "name": "Chatbot",
+                    "simulationTime": 5000,
+                    "uuid": "a03b33a4-d8a5-43ab-899c-b98d949c5d7b",
+                    "width": 252,
+                    "x": 961.1881731783707,
+                    "y": -78.03902688572987
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "C:\\Users\\user\\Downloads\\Whiteboard.win64\\Whiteboard\\Whiteboard.exe",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "ae3a8758-13fd-4ed6-a355-495af69337dc"
+                            }
+                        ]
+                    },
+                    "class": "118ec52d-5aba-5ee0-baa7-ae34d567f092",
+                    "comment": "",
+                    "height": 202,
+                    "name": "Whiteboard",
+                    "simulationTime": 5000,
+                    "uuid": "b0eb6906-362a-4680-82ed-22cfa832c787",
+                    "width": 252,
+                    "x": 419.75120555690125,
+                    "y": 300.78894725499333
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy_1 --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8090",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "5f45d6ae-074e-44b6-b375-811de6ad0902"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "c1a0d4a1-fe17-4115-9f11-f7114bd1472c"
+                            }
+                        ]
+                    },
+                    "class": "5324c2a2-846f-486a-81b2-f95eb06a5cf4",
+                    "comment": "",
+                    "height": 114,
+                    "name": "Backend",
+                    "simulationTime": 5000,
+                    "uuid": "eb5ee841-2d33-482c-a34b-89debfd2f901",
+                    "width": 250,
+                    "x": 381.696843094986,
+                    "y": 121.51684306858596
+                },
+                {
+                    "data": {
+                        "data_decoder": "BINARY",
+                        "msg_type": "",
+                        "proto_file_path": "",
+                        "string_decoder": "PLAIN_TEXT"
+                    },
+                    "height": 112,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.observer",
+                    "uuid": "7a70dd89-1d17-4a33-90ee-461b0006e5b2",
+                    "width": 270,
+                    "x": 738.092002501673,
+                    "y": 79.9464348075993
+                },
+                {
+                    "data": {
+                        "data_decoder": "BINARY",
+                        "msg_type": "",
+                        "proto_file_path": "",
+                        "string_decoder": "PLAIN_TEXT"
+                    },
+                    "height": 112,
+                    "name": "",
+                    "tool": "com.ingescape.circle.tool.observer",
+                    "uuid": "6623cd54-0516-4bf0-b385-0ab90afe902b",
+                    "width": 270,
+                    "x": 790.8014249480595,
+                    "y": 278.80471040078567
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy_1 --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8090",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "17b1839d-ecad-45f6-8938-3a01bded0d2f"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy_1 --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8090",
+                                "isAttachedToCircle": true,
+                                "uuid": "71c51ae4-4aab-436a-b32d-b049fe4ab9e4"
+                            }
+                        ]
+                    },
+                    "class": "48879EBE0FBC48D8B429F11510954D9B",
+                    "comment": "",
+                    "height": 100,
+                    "name": "Proxy_1",
+                    "simulationTime": 5000,
+                    "uuid": "9c3425cc-6fe7-4140-8d85-5f212b4e0488",
+                    "width": 250,
+                    "x": -9.703734631979444,
+                    "y": 175.2218976165276
+                },
+                {
+                    "agent": {
+                        "instances": [
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "94c41e20-b142-4caa-adbb-ab150ec0f16a"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "9bbbecd5-3b72-4ca5-adc0-8e68cb49cc5b"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "f51227d4-86db-493f-b1a3-8394e7f537ac"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:5000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "3fea7f2b-54bb-4eb5-ac9c-ddc8032e2972"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:5000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "a96ff6d0-03db-46d6-88fb-b6739e32d57e"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "5e4eab82-955c-4031-8270-255dd284492d"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1337",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "0af62c10-51f2-4b52-b3a6-33565b753633"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1338",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "6baadf49-79dd-4811-911f-a878ffdb5458"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "efbb548c-2faa-41d2-8d73-6359fb4ea08d"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "a84be18d-fa29-48df-8058-fde623f5e5f5"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1338",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "37625067-e7d7-41ac-9027-c189523d7d2c"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1337",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "4bf48c16-ab32-4ec9-bc68-aedfdf87399d"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "a99b94f3-1a16-4efa-a725-e0afbd01916e"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1338",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "81b1c9d9-c772-496e-b4f8-860398cd6ff7"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "6511cd7f-83fd-480f-a678-b68c2a06d2d1"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1337",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "b64e3a05-fb75-49c0-8593-66ec6cc42e75"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "60bcdf71-90b2-4e26-b893-2c20692e8c4d"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1337",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "fd0c3578-dbbf-4a64-889b-2d91bd297acd"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "73401365-03de-4d51-a692-8ca301fed5a1"
+                            },
+                            {
+                                "commandLine": "\"C:\\Program Files\\Ingescape\\Ingescape Circle v4\\igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1338",
+                                "hostname": "AsmaeK",
+                                "ip": "10.188.149.134",
+                                "isAttachedToCircle": false,
+                                "mac": "00:D4:9E:52:6C:0A",
+                                "uuid": "051dfcfb-52e4-435c-a964-d909b347219b"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "isAttachedToCircle": true,
+                                "uuid": "22a8c806-2963-4fa1-932b-017155864020"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "isAttachedToCircle": true,
+                                "uuid": "7c916b68-9a60-467b-9619-dc001a7009c1"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "isAttachedToCircle": true,
+                                "uuid": "3ab3c5ce-facc-4142-8932-ec9095528678"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "isAttachedToCircle": true,
+                                "uuid": "39f7beb4-de87-4909-aba7-6e743f7a08ff"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "isAttachedToCircle": true,
+                                "uuid": "2227b0aa-26f6-47aa-8a16-1d12c9ce2730"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8000",
+                                "isAttachedToCircle": true,
+                                "uuid": "a78ea739-34ec-48eb-9671-af4a64495461"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1337",
+                                "isAttachedToCircle": true,
+                                "uuid": "0ab3a659-d848-4b89-b3e8-999052c88c70"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://127.0.0.1:1338",
+                                "isAttachedToCircle": true,
+                                "uuid": "c08e062b-140a-4a3c-90f0-0bd066739fc7"
+                            },
+                            {
+                                "commandLine": "\"C:/Program Files/Ingescape/Ingescape Circle v4/igsProxy.exe\" --port 5670 --name Proxy --device \"Wi-Fi 2\" --license C:/Users/user/Documents/Ingescape/licenses --ws ws://localhost:8080",
+                                "isAttachedToCircle": true,
+                                "uuid": "9125946f-fd92-4e2b-81cc-e1421c014b08"
+                            }
+                        ]
+                    },
+                    "class": "48879EBE0FBC48D8B429F11510954D9B",
+                    "comment": "",
+                    "height": 100,
+                    "name": "Proxy",
+                    "simulationTime": 5000,
+                    "uuid": "2ff4e301-d6da-4c63-b5ba-76d14918e00d",
+                    "width": 250,
+                    "x": -63.40521645816989,
+                    "y": -35.90618781584007
+                }
+            ],
+            "links": {
+                "mappings": [
+                    {
+                        "from": "Chatbot",
+                        "fromInput": "Demande",
+                        "to": "UserInterface",
+                        "toOutput": "Question"
+                    },
+                    {
+                        "from": "Backend",
+                        "fromInput": "input",
+                        "to": "UserInterface",
+                        "toOutput": "Question"
+                    },
+                    {
+                        "from": "Whiteboard",
+                        "fromInput": "chatMessage",
+                        "to": "Backend",
+                        "toOutput": "output"
+                    }
+                ],
+                "others": [
+                    {
+                        "destination": "7a70dd89-1d17-4a33-90ee-461b0006e5b2",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "3231851e-16f1-44fa-929b-efaae5b6937b",
+                        "sourceIO": {
+                            "name": "Question",
+                            "type": "OUTPUT"
+                        }
+                    },
+                    {
+                        "destination": "6623cd54-0516-4bf0-b385-0ab90afe902b",
+                        "destinationIO": {
+                            "name": "wildcard",
+                            "type": "INPUT"
+                        },
+                        "source": "b0eb6906-362a-4680-82ed-22cfa832c787",
+                        "sourceIO": {
+                            "name": "lastAction",
+                            "type": "OUTPUT"
+                        }
+                    }
+                ]
+            },
+            "name": "Main view"
+        }
+    ]
+}

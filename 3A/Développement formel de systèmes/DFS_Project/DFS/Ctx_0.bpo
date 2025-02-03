@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="63">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="59">
+        <org.eventb.core.poIdentifier name="TRAINS" org.eventb.core.type="ℙ(TRAINS)"/>
+        <org.eventb.core.poIdentifier name="TRONCONS" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="Tr1" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="Tr2" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="T1" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T2" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T3" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T4" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="reseau" org.eventb.core.type="ℙ(TRONCONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="arrets" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="p0" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="axm14/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="partition(arrets,{T1},{T2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(arrets)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP."/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(dom(p0))∧finite(TRAINS)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP."/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP0"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒finite(reseau[{a}])" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP1"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒finite(reseau∼[{a}])" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm11/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="63">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP2"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(TRONCONS)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYP)" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="59">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="reseau∈TRONCONS ↔ TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(TRAINS,{Tr1},{Tr2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#="/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(TRONCONS,{T1},{T2},{T3},{T4})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#&gt;"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYP," org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP)" org.eventb.core.poStamp="59">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(arrets,{T1},{T2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="arrets⊂TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="p0∈TRAINS → arrets" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYP." org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP," org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(arrets)&gt;1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="p0={Tr1 ↦ T1,Tr2 ↦ T2}" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#F"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYP0" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP." org.eventb.core.poStamp="60">
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="card(dom(p0))=card(TRAINS)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀t⦂TRONCONS·t∈TRONCONS∧¬t ↦ t∈reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYP1" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP0" org.eventb.core.poStamp="60">
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYP2" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP1" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau∼[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#8"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DFS/Ctx_0.bpo|org.eventb.core.poFile#Ctx_0|org.eventb.core.poPredicateSet#HYP2" org.eventb.core.poStamp="61">
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="card(TRONCONS)=4" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒reseau[{a}]∩arrets=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀t1⦂TRONCONS,t2⦂TRONCONS·t1∈TRONCONS∧t2∈TRONCONS∧t1 ↦ t2∈reseau⇒t2 ↦ t1∉reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#N"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

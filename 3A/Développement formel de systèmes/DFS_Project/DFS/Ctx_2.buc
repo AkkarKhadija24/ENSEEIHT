@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="Ctx_1"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="VMAX"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="FMAX"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="AMAX"/>
+    <org.eventb.core.axiom name="," org.eventb.core.label="axm1" org.eventb.core.predicate="VMAX ∈ ℕ"/>
+    <org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="AMAX ∈ ℕ"/>
+    <org.eventb.core.axiom name="." org.eventb.core.label="axm3" org.eventb.core.predicate="FMAX ∈ ℤ ∧ FMAX &lt; 0"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="axm4" org.eventb.core.predicate="∀tr · tr ∈ TRAINS ⇒ w0(wagons(tr)(1)) = p0(tr)"/>
+    <org.eventb.core.axiom name="0" org.eventb.core.label="axm5" org.eventb.core.predicate="VMAX &gt; 0"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="axm6" org.eventb.core.predicate="card(TRAINS) = 2"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm7" org.eventb.core.predicate="v0 ∈ TRAINS → ℕ"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="v0"/>
+    <org.eventb.core.axiom name="4" org.eventb.core.label="axm8" org.eventb.core.predicate="a0 ∈ TRAINS → ℤ"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="5" org.eventb.core.identifier="a0"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="6" org.eventb.core.identifier="m0"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="aut0"/>
+    <org.eventb.core.axiom name="8" org.eventb.core.label="axm9" org.eventb.core.predicate="m0 ∈ TRAINS ⇸ ℕ"/>
+    <org.eventb.core.axiom name="9" org.eventb.core.label="axm10" org.eventb.core.predicate="aut0 ∈ TRAINS ⇸ ℕ"/>
+    <org.eventb.core.axiom name=":" org.eventb.core.label="axm11" org.eventb.core.predicate="∀tr· tr ∈ TRAINS ⇒ v0(tr) ≤ VMAX ∧ v0(tr) ≥ 0"/>
+    <org.eventb.core.axiom name=";" org.eventb.core.label="axm12" org.eventb.core.predicate="∀tr· tr ∈ TRAINS ⇒ a0(tr) ≥ FMAX ∧ a0(tr) ≤ AMAX"/>
+</org.eventb.core.contextFile>

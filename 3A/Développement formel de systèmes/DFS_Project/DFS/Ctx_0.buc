@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.carrierSet name="'" org.eventb.core.identifier="TRONCONS"/>
+    <org.eventb.core.carrierSet name=")" org.eventb.core.identifier="TRAINS"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="reseau"/>
+    <org.eventb.core.axiom name="," org.eventb.core.label="axm1" org.eventb.core.predicate="reseau ∈ TRONCONS ↔ TRONCONS"/>
+    <org.eventb.core.axiom name="=" org.eventb.core.label="axm12" org.eventb.core.predicate="partition(TRAINS, {Tr1}, {Tr2})"/>
+    <org.eventb.core.axiom name="&gt;" org.eventb.core.label="axm13" org.eventb.core.predicate="partition(TRONCONS, {T1}, {T2}, {T3}, {T4})"/>
+    <org.eventb.core.axiom name="?" org.eventb.core.label="axm14" org.eventb.core.predicate="partition(arrets,{T1}, {T2})" org.eventb.core.theorem="true"/>
+    <org.eventb.core.axiom name="6" org.eventb.core.label="axm2" org.eventb.core.predicate="arrets ⊂ TRONCONS"/>
+    <org.eventb.core.axiom name="3" org.eventb.core.label="axm3" org.eventb.core.predicate="p0 ∈ TRAINS → arrets"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="axm4" org.eventb.core.predicate="card(arrets) &gt; 1"/>
+    <org.eventb.core.axiom name="F" org.eventb.core.label="axm15" org.eventb.core.predicate="p0 = {Tr1 ↦ T1, Tr2 ↦ T2}"/>
+    <org.eventb.core.axiom name="4" org.eventb.core.label="axm5" org.eventb.core.predicate="card(dom(p0)) = card(TRAINS)"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="axm6" org.eventb.core.predicate="∀ t· t ∈ TRONCONS ∧ ¬(t ↦ t ∈ reseau)"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="axm7" org.eventb.core.predicate="∀ a· a ∈ arrets ⇒ card(reseau[{a}]) = 1"/>
+    <org.eventb.core.axiom name="8" org.eventb.core.label="axm8" org.eventb.core.predicate="∀ a· a ∈ arrets ⇒ card(reseau∼[{a}]) = 1"/>
+    <org.eventb.core.axiom name=";" org.eventb.core.label="axm11" org.eventb.core.predicate="card(TRONCONS) = 4"/>
+    <org.eventb.core.axiom name=":" org.eventb.core.label="axm10" org.eventb.core.predicate="∀ a· a ∈ arrets ⇒ (reseau[{a}] ∩ arrets) = ∅"/>
+    <org.eventb.core.constant name="2" org.eventb.core.identifier="p0"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="arrets"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="@" org.eventb.core.identifier="T1"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="A" org.eventb.core.identifier="T2"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="B" org.eventb.core.identifier="T3"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="H" org.eventb.core.identifier="T4"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="D" org.eventb.core.identifier="Tr1"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="J" org.eventb.core.identifier="Tr2"/>
+    <org.eventb.core.axiom name="N" org.eventb.core.label="axm16" org.eventb.core.predicate="∀ t1, t2· ((t1 ∈ TRONCONS ∧ t2 ∈ TRONCONS ∧ t1↦t2 ∈ reseau) ⇒ t2↦t1 ∉ reseau) "/>
+</org.eventb.core.contextFile>

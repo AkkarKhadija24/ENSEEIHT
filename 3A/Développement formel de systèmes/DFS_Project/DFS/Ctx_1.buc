@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="Ctx_0"/>
+    <org.eventb.core.carrierSet name="(" org.eventb.core.identifier="WAGONS"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="wagons"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.identifier="taille"/>
+    <org.eventb.core.axiom name="+" org.eventb.core.label="axm1" org.eventb.core.predicate="wagons ∈ TRAINS → (1‥taille → WAGONS)"/>
+    <org.eventb.core.axiom name="5" org.eventb.core.label="axm8" org.eventb.core.predicate="partition(WAGONS, {wagon1},{wagon2},{wagon3},{wagon4})"/>
+    <org.eventb.core.axiom name="," org.eventb.core.label="axm2" org.eventb.core.predicate="taille ∈ ℕ"/>
+    <org.eventb.core.axiom name="-" org.eventb.core.label="axm3" org.eventb.core.predicate="∀w,t1,t2· w ∈ WAGONS ∧ t1 ∈ TRAINS ∧ t2 ∈ TRAINS ⇒ ((t1 ≠ t2 ∧ w ∈ ran(wagons(t1))) ⇒ w ∉ ran(wagons(t2)))"/>
+    <org.eventb.core.axiom name="." org.eventb.core.label="axm4" org.eventb.core.predicate="{w ∣ ∃t· t∈TRAINS ∧ w∈ ran(wagons(t))} = WAGONS"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="axm5" org.eventb.core.predicate="taille = 2"/>
+    <org.eventb.core.axiom name="0" org.eventb.core.label="axm6" org.eventb.core.predicate="card(WAGONS) = taille ∗ card(TRAINS)"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="w0"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm7" org.eventb.core.predicate="w0 ∈ WAGONS → TRONCONS"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="3" org.eventb.core.identifier="wagon1"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="4" org.eventb.core.identifier="wagon2"/>
+    <org.eventb.core.axiom name="6" org.eventb.core.label="axm9" org.eventb.core.predicate="w0 = {wagon1 ↦ T1, wagon2 ↦ T1, wagon3 ↦ T2, wagon4 ↦ T2}"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="wagon3"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="8" org.eventb.core.identifier="wagon4"/>
+    <org.eventb.core.axiom name="9" org.eventb.core.label="axm10" org.eventb.core.predicate="wagons = {(Tr1 ↦ {(1 ↦ wagon1),(2 ↦ wagon2)}),(Tr2 ↦ {(1 ↦ wagon3),(2 ↦ wagon4)})}"/>
+</org.eventb.core.contextFile>

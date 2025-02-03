@@ -1,0 +1,730 @@
+@base <https://w3id.org/cluedo4KG/onto#> .
+@prefix : <https://w3id.org/cluedo4KG/onto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://creativecommons.org/ns#license
+# 
+# http://purl.org/dc/terms/creator
+# 
+# http://purl.org/dc/terms/issued
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cluedo4KG/onto#aPourPieceVoisine
+# 
+# https://w3id.org/cluedo4KG/onto#cause_de_deces
+# 
+# https://w3id.org/cluedo4KG/onto#cause_objet_mobile
+# 
+# https://w3id.org/cluedo4KG/onto#est_centre_de
+# 
+# https://w3id.org/cluedo4KG/onto#etage_contient_piece
+# 
+# https://w3id.org/cluedo4KG/onto#lieu_situé_dans_un_lieu
+# 
+# https://w3id.org/cluedo4KG/onto#maisonContientPiece
+# 
+# https://w3id.org/cluedo4KG/onto#maison_contient_etage
+# 
+# https://w3id.org/cluedo4KG/onto#meurtrier_tuee_victime
+# 
+# https://w3id.org/cluedo4KG/onto#objetDansPiece
+# 
+# https://w3id.org/cluedo4KG/onto#personneDansPiece
+# 
+# https://w3id.org/cluedo4KG/onto#personne_a_ou_avait_un_objet
+# 
+# https://w3id.org/cluedo4KG/onto#personne_a_toujours_un_objet
+# 
+# https://w3id.org/cluedo4KG/onto#personne_a_un_objet
+# 
+# https://w3id.org/cluedo4KG/onto#personne_actuellement_dans_piece
+# 
+# https://w3id.org/cluedo4KG/onto#personne_dans_Lieu
+# 
+# https://w3id.org/cluedo4KG/onto#personne_est_ou_a_ete_dans_lieu
+# 
+# https://w3id.org/cluedo4KG/onto#pieceContientObjet
+# 
+# https://w3id.org/cluedo4KG/onto#pieceContientPersonne
+# 
+# https://w3id.org/cluedo4KG/onto#pieceDansMaison
+# 
+# https://w3id.org/cluedo4KG/onto#piece_contient_zone
+# 
+# https://w3id.org/cluedo4KG/onto#piece_dans_etage
+# 
+# https://w3id.org/cluedo4KG/onto#tuee_par_un_meurtrier
+# 
+# https://w3id.org/cluedo4KG/onto#zone_dans_piece
+# 
+# https://w3id.org/cluedo4KG/onto#zone_organisee_objet_immobile
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cluedo4KG/onto#a_une_densité
+# 
+# https://w3id.org/cluedo4KG/onto#estVivant
+# 
+# https://w3id.org/cluedo4KG/onto#est_morte_depuis
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cluedo4KG/onto#Maison
+# 
+# https://w3id.org/cluedo4KG/onto#Objet
+# 
+# https://w3id.org/cluedo4KG/onto#Personne
+# 
+# https://w3id.org/cluedo4KG/onto#Piece
+# 
+# https://w3id.org/cluedo4KG/onto#VictimeBalle
+# 
+# https://w3id.org/cluedo4KG/onto#VictimeTueeAutrement
+# 
+# https://w3id.org/cluedo4KG/onto#arme
+# 
+# https://w3id.org/cluedo4KG/onto#armeCrime
+# 
+# https://w3id.org/cluedo4KG/onto#armeFeu
+# 
+# https://w3id.org/cluedo4KG/onto#assassin
+# 
+# https://w3id.org/cluedo4KG/onto#blessure
+# 
+# https://w3id.org/cluedo4KG/onto#cause
+# 
+# https://w3id.org/cluedo4KG/onto#causeParBalle
+# 
+# https://w3id.org/cluedo4KG/onto#causeParTranchant
+# 
+# https://w3id.org/cluedo4KG/onto#causeparContondant
+# 
+# https://w3id.org/cluedo4KG/onto#contondant
+# 
+# https://w3id.org/cluedo4KG/onto#empoisonnement
+# 
+# https://w3id.org/cluedo4KG/onto#etage
+# 
+# https://w3id.org/cluedo4KG/onto#innocent
+# 
+# https://w3id.org/cluedo4KG/onto#lieu
+# 
+# https://w3id.org/cluedo4KG/onto#lieuCrime
+# 
+# https://w3id.org/cluedo4KG/onto#liquide
+# 
+# https://w3id.org/cluedo4KG/onto#meurtrier
+# 
+# https://w3id.org/cluedo4KG/onto#mou
+# 
+# https://w3id.org/cluedo4KG/onto#noyade
+# 
+# https://w3id.org/cluedo4KG/onto#objetImmobile
+# 
+# https://w3id.org/cluedo4KG/onto#objetMobile
+# 
+# https://w3id.org/cluedo4KG/onto#poudre
+# 
+# https://w3id.org/cluedo4KG/onto#produit
+# 
+# https://w3id.org/cluedo4KG/onto#tranchant
+# 
+# https://w3id.org/cluedo4KG/onto#tueur
+# 
+# https://w3id.org/cluedo4KG/onto#victime
+# 
+# https://w3id.org/cluedo4KG/onto#zone
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/cluedo4KG/onto#Ana_Conda
+# 
+# https://w3id.org/cluedo4KG/onto#Bibliothèque
+# 
+# https://w3id.org/cluedo4KG/onto#Omar_Tyr
+# 
+# https://w3id.org/cluedo4KG/onto#SerreEtage
+# 
+# https://w3id.org/cluedo4KG/onto#bistouri
+# 
+# https://w3id.org/cluedo4KG/onto#scalpel
+# 
+# https://w3id.org/cluedo4KG/onto#premier
+# 
+# https://w3id.org/cluedo4KG/onto#scalpel
+# 
+# https://w3id.org/cluedo4KG/onto#serre
+# 
+# Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+<onto> a owl:Ontology;
+  <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/>;
+  <http://purl.org/dc/terms/creator> "Camille Pradel", "Nathalie Hernandez";
+  <http://purl.org/dc/terms/issued> "2012-12-01"^^xsd:date;
+  <http://purl.org/vocab/vann/preferredNamespacePrefix> "cluedonto";
+  <http://purl.org/vocab/vann/preferredNamespaceUri> <#>;
+  rdfs:comment "Cette ontologie a été créée pour être utilisée dans le tutoriel SPARQLUEDO faisant partie de la ressource CLUEDO4KG"@fr,
+    "This ontology was created for use in the SPARQLUEDO tutorial, which is part of the CLUEDO4KG resource."@en .
+
+<http://creativecommons.org/ns#license> a owl:AnnotationProperty .
+
+<http://purl.org/dc/terms/creator> a owl:AnnotationProperty .
+
+<http://purl.org/dc/terms/issued> a owl:AnnotationProperty .
+
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+
+xsd:date a rdfs:Datatype .
+
+:aPourPieceVoisine a owl:ObjectProperty, owl:SymmetricProperty, owl:IrreflexiveProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Piece;
+  rdfs:range :Piece;
+  rdfs:label "a pour pièce voisine"@fr, "has as neighbour room"@en .
+
+:cause_de_deces a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :victime;
+  rdfs:range :cause .
+
+:cause_objet_mobile a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :cause;
+  rdfs:range :objetMobile .
+
+:est_centre_de a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Objet;
+  rdfs:range :zone .
+
+:etage_contient_piece a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :etage;
+  rdfs:range :Piece .
+
+:lieu_situé_dans_un_lieu a owl:ObjectProperty, owl:TransitiveProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :lieu;
+  rdfs:range :lieu .
+
+:maisonContientPiece a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu;
+  owl:inverseOf :pieceDansMaison;
+  rdfs:domain :Maison;
+  rdfs:range :Piece;
+  rdfs:label "house contains room"@en, "maison contient pièce"@fr .
+
+:maison_contient_etage a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu;
+  rdfs:domain :Maison;
+  rdfs:range :etage .
+
+:meurtrier_tuee_victime a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :meurtrier;
+  rdfs:range :victime .
+
+:objetDansPiece a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Objet;
+  rdfs:range :Piece;
+  rdfs:label "object in room"@en, "objet dans pièce"@fr .
+
+:personneDansPiece a owl:ObjectProperty;
+  rdfs:subPropertyOf :personne_dans_Lieu;
+  owl:inverseOf :pieceContientPersonne;
+  owl:propertyChainAxiom _:genid2;
+  rdfs:label "person in room"@en, "personne dans pièce"@fr .
+
+_:genid2 a rdf:List;
+  rdf:first :personne_a_un_objet;
+  rdf:rest _:genid1 .
+
+_:genid1 a rdf:List;
+  rdf:first :objetDansPiece;
+  rdf:rest rdf:nil .
+
+:personne_a_ou_avait_un_objet a owl:ObjectProperty;
+  rdfs:domain :Personne .
+
+:personne_a_toujours_un_objet a owl:ObjectProperty;
+  rdfs:subPropertyOf :personne_a_un_objet;
+  rdfs:domain :Personne;
+  rdfs:range :Objet .
+
+:personne_a_un_objet a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Personne;
+  rdfs:range :Objet .
+
+:personne_actuellement_dans_piece a owl:ObjectProperty;
+  rdfs:subPropertyOf :personneDansPiece;
+  rdfs:domain :Personne;
+  rdfs:range :Piece .
+
+:personne_dans_Lieu a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Personne;
+  rdfs:range :lieu;
+  owl:propertyChainAxiom _:genid4 .
+
+_:genid4 a rdf:List;
+  rdf:first :personne_dans_Lieu;
+  rdf:rest _:genid3 .
+
+_:genid3 a rdf:List;
+  rdf:first :lieu_situé_dans_un_lieu;
+  rdf:rest rdf:nil .
+
+:personne_est_ou_a_ete_dans_lieu a owl:ObjectProperty;
+  rdfs:domain :Personne;
+  rdfs:range :lieu .
+
+:pieceContientObjet a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Piece;
+  rdfs:range :Objet;
+  owl:propertyChainAxiom _:genid6;
+  rdfs:label "pièce contient objet"@fr, "room contains object"@en .
+
+_:genid6 a rdf:List;
+  rdf:first :piece_contient_zone;
+  rdf:rest _:genid5 .
+
+_:genid5 a rdf:List;
+  rdf:first :zone_organisee_objet_immobile;
+  rdf:rest rdf:nil .
+
+:pieceContientPersonne a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :Piece;
+  rdfs:range :Personne;
+  rdfs:label "pièce contient personne"@fr, "room contains person"@en .
+
+:pieceDansMaison a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu;
+  rdfs:label "pièce dans maison"@fr, "room in house"@en .
+
+:piece_contient_zone a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu;
+  rdfs:domain :Piece;
+  rdfs:range :zone;
+  owl:propertyChainAxiom _:genid8 .
+
+_:genid8 a rdf:List;
+  rdf:first :objetDansPiece;
+  rdf:rest _:genid7 .
+
+_:genid7 a rdf:List;
+  rdf:first :est_centre_de;
+  rdf:rest rdf:nil .
+
+:piece_dans_etage a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu;
+  rdfs:domain :Piece;
+  rdfs:range :etage .
+
+:tuee_par_un_meurtrier a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :victime;
+  rdfs:range :meurtrier .
+
+:zone_dans_piece a owl:ObjectProperty;
+  rdfs:subPropertyOf :lieu_situé_dans_un_lieu .
+
+:zone_organisee_objet_immobile a owl:ObjectProperty;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :zone;
+  rdfs:range :objetImmobile .
+
+:a_une_densité a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain :produit;
+  rdfs:range xsd:float .
+
+:estVivant a owl:DatatypeProperty;
+  rdfs:domain :Personne;
+  rdfs:range xsd:boolean;
+  rdfs:comment "indicates whether a person is alive (True) or dead (False)"@en, "indique si une personne est vivante (True) ou morte (False)"@fr;
+  rdfs:label "est vivant"@fr, "is alive"@en .
+
+:est_morte_depuis a owl:DatatypeProperty;
+  rdfs:domain :Personne;
+  rdfs:range xsd:integer .
+
+:Maison a owl:Class;
+  rdfs:subClassOf :lieu;
+  owl:disjointWith :etage;
+  rdfs:comment "house"@en;
+  rdfs:label "maison"@fr .
+
+:Objet a owl:Class;
+  rdfs:subClassOf owl:Thing;
+  rdfs:label "object"@en, "objet"@fr .
+
+:Personne a owl:Class;
+  rdfs:subClassOf owl:Thing;
+  owl:disjointUnionOf _:genid11;
+  rdfs:label "person"@en, "personne"@fr .
+
+_:genid11 a rdf:List;
+  rdf:first :innocent;
+  rdf:rest _:genid10 .
+
+_:genid10 a rdf:List;
+  rdf:first :meurtrier;
+  rdf:rest _:genid9 .
+
+_:genid9 a rdf:List;
+  rdf:first :victime;
+  rdf:rest rdf:nil .
+
+:Piece a owl:Class;
+  rdfs:subClassOf :lieu;
+  owl:disjointWith :etage;
+  rdfs:label "pièce"@fr, "room"@en .
+
+:VictimeBalle a owl:Class;
+  owl:equivalentClass _:genid12;
+  rdfs:subClassOf :victime .
+
+_:genid12 a owl:Class;
+  owl:intersectionOf _:genid20 .
+
+_:genid20 a rdf:List;
+  rdf:first :victime;
+  rdf:rest _:genid18 .
+
+_:genid18 a rdf:List;
+  rdf:first _:genid19;
+  rdf:rest _:genid13 .
+
+_:genid13 a rdf:List;
+  rdf:first _:genid14;
+  rdf:rest rdf:nil .
+
+_:genid14 a owl:Restriction;
+  owl:someValuesFrom _:genid15;
+  owl:onProperty :est_morte_depuis .
+
+_:genid15 a rdfs:Datatype;
+  owl:withRestrictions _:genid16;
+  owl:onDatatype xsd:integer .
+
+_:genid16 a rdf:List;
+  rdf:first _:genid17;
+  rdf:rest rdf:nil .
+
+_:genid17 xsd:maxInclusive 5 .
+
+_:genid19 a owl:Restriction;
+  owl:someValuesFrom :causeParBalle;
+  owl:onProperty :cause_de_deces .
+
+:VictimeTueeAutrement a owl:Class;
+  owl:equivalentClass _:genid21;
+  rdfs:subClassOf :victime .
+
+_:genid21 a owl:Class;
+  owl:intersectionOf _:genid30 .
+
+_:genid30 a rdf:List;
+  rdf:first :victime;
+  rdf:rest _:genid27 .
+
+_:genid27 a rdf:List;
+  rdf:first _:genid28;
+  rdf:rest _:genid22 .
+
+_:genid22 a rdf:List;
+  rdf:first _:genid23;
+  rdf:rest rdf:nil .
+
+_:genid23 a owl:Restriction;
+  owl:someValuesFrom _:genid24;
+  owl:onProperty :est_morte_depuis .
+
+_:genid24 a rdfs:Datatype;
+  owl:withRestrictions _:genid25;
+  owl:onDatatype xsd:integer .
+
+_:genid25 a rdf:List;
+  rdf:first _:genid26;
+  rdf:rest rdf:nil .
+
+_:genid26 xsd:minExclusive 5 .
+
+_:genid28 a owl:Restriction;
+  owl:someValuesFrom _:genid29;
+  owl:onProperty :cause_de_deces .
+
+_:genid29 a owl:Class;
+  owl:complementOf :causeParBalle .
+
+:arme a owl:Class;
+  rdfs:subClassOf :objetMobile .
+
+:armeCrime a owl:Class;
+  rdfs:subClassOf :arme .
+
+:armeFeu a owl:Class;
+  rdfs:subClassOf :arme .
+
+:assassin a owl:Class;
+  rdfs:subClassOf :meurtrier .
+
+:blessure a owl:Class;
+  rdfs:subClassOf :cause .
+
+:cause a owl:Class .
+
+:causeParBalle a owl:Class;
+  owl:equivalentClass _:genid31;
+  rdfs:subClassOf :blessure .
+
+_:genid31 a owl:Restriction;
+  owl:someValuesFrom :armeFeu;
+  owl:onProperty :cause_objet_mobile .
+
+:causeParTranchant a owl:Class;
+  rdfs:subClassOf :blessure .
+
+:causeparContondant a owl:Class;
+  rdfs:subClassOf :blessure .
+
+:contondant a owl:Class;
+  rdfs:subClassOf :arme .
+
+:empoisonnement a owl:Class;
+  rdfs:subClassOf :cause .
+
+:etage a owl:Class;
+  rdfs:subClassOf :lieu .
+
+:innocent a owl:Class;
+  rdfs:subClassOf :Personne .
+
+:lieu a owl:Class .
+
+:lieuCrime a owl:Class;
+  owl:equivalentClass _:genid32;
+  rdfs:subClassOf :Piece .
+
+_:genid32 a owl:Restriction;
+  owl:someValuesFrom :victime;
+  owl:onProperty :pieceContientPersonne .
+
+:liquide a owl:Class;
+  owl:equivalentClass _:genid33;
+  rdfs:subClassOf :produit .
+
+_:genid33 a owl:Restriction;
+  owl:someValuesFrom _:genid34;
+  owl:onProperty :a_une_densité .
+
+_:genid34 a rdfs:Datatype;
+  owl:withRestrictions _:genid35;
+  owl:onDatatype xsd:float .
+
+_:genid35 a rdf:List;
+  rdf:first _:genid36;
+  rdf:rest rdf:nil .
+
+_:genid36 xsd:maxExclusive "2.5"^^xsd:float .
+
+:meurtrier a owl:Class;
+  owl:equivalentClass _:genid37, _:genid41;
+  rdfs:subClassOf :Personne;
+  rdfs:label "murderer"@en .
+
+_:genid37 a owl:Class;
+  owl:intersectionOf _:genid40 .
+
+_:genid40 a rdf:List;
+  rdf:first :Personne;
+  rdf:rest _:genid38 .
+
+_:genid38 a rdf:List;
+  rdf:first _:genid39;
+  rdf:rest rdf:nil .
+
+_:genid39 a owl:Restriction;
+  owl:someValuesFrom :victime;
+  owl:onProperty :meurtrier_tuee_victime .
+
+_:genid41 a owl:Class;
+  owl:intersectionOf _:genid44 .
+
+_:genid44 a rdf:List;
+  rdf:first _:genid45;
+  rdf:rest _:genid42 .
+
+_:genid42 a rdf:List;
+  rdf:first _:genid43;
+  rdf:rest rdf:nil .
+
+_:genid43 a owl:Restriction;
+  owl:someValuesFrom :armeCrime;
+  owl:onProperty :personne_a_un_objet .
+
+_:genid45 a owl:Restriction;
+  owl:someValuesFrom :lieuCrime;
+  owl:onProperty :personneDansPiece .
+
+:mou a owl:Class;
+  rdfs:subClassOf :objetMobile .
+
+:noyade a owl:Class;
+  rdfs:subClassOf :cause .
+
+:objetImmobile a owl:Class;
+  rdfs:subClassOf :Objet .
+
+:objetMobile a owl:Class;
+  rdfs:subClassOf :Objet .
+
+:poudre a owl:Class;
+  owl:equivalentClass _:genid46;
+  rdfs:subClassOf :produit .
+
+_:genid46 a owl:Restriction;
+  owl:someValuesFrom _:genid47;
+  owl:onProperty :a_une_densité .
+
+_:genid47 a rdfs:Datatype;
+  owl:withRestrictions _:genid48;
+  owl:onDatatype xsd:float .
+
+_:genid48 a rdf:List;
+  rdf:first _:genid49;
+  rdf:rest rdf:nil .
+
+_:genid49 xsd:minExclusive "2.5"^^xsd:float .
+
+:produit a owl:Class;
+  rdfs:subClassOf :objetMobile;
+  owl:disjointUnionOf _:genid51 .
+
+_:genid51 a rdf:List;
+  rdf:first :liquide;
+  rdf:rest _:genid50 .
+
+_:genid50 a rdf:List;
+  rdf:first :poudre;
+  rdf:rest rdf:nil .
+
+:tranchant a owl:Class;
+  rdfs:subClassOf :arme .
+
+:tueur a owl:Class;
+  rdfs:subClassOf :meurtrier .
+
+:victime a owl:Class;
+  owl:equivalentClass _:genid52, _:genid56;
+  rdfs:subClassOf :Personne .
+
+_:genid52 a owl:Class;
+  owl:intersectionOf _:genid55 .
+
+_:genid55 a rdf:List;
+  rdf:first :Personne;
+  rdf:rest _:genid53 .
+
+_:genid53 a rdf:List;
+  rdf:first _:genid54;
+  rdf:rest rdf:nil .
+
+_:genid54 a owl:Restriction;
+  owl:hasValue false;
+  owl:onProperty :estVivant .
+
+_:genid56 a owl:Restriction;
+  owl:onClass :cause;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onProperty :cause_de_deces .
+
+:zone a owl:Class;
+  rdfs:subClassOf :lieu .
+
+:Ana_Conda a owl:NamedIndividual, :Personne;
+  :personneDansPiece :Bibliothèque .
+
+:Bibliothèque a owl:NamedIndividual, :Piece;
+  :piece_dans_etage :premier .
+
+:Omar_Tyr a owl:NamedIndividual, :Personne;
+  :estVivant false;
+  :est_morte_depuis 3 .
+
+:SerreEtage a owl:NamedIndividual, :etage;
+  :lieu_situé_dans_un_lieu :serre .
+
+:bistouri a owl:NamedIndividual, :Objet;
+  owl:sameAs :scalpel .
+
+:premier a owl:NamedIndividual, :etage;
+  :etage_contient_piece :Bibliothèque .
+
+:scalpel a owl:NamedIndividual, :Objet;
+  :objetDansPiece :serre .
+
+:serre a owl:NamedIndividual, :lieu;
+  :pieceContientObjet :scalpel;
+  :piece_dans_etage :SerreEtage .

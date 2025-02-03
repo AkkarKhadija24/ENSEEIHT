@@ -1,0 +1,577 @@
+﻿Binôme : 
+* EL ALAMI Youssef
+* AKKAR Khadija
+
+
+Les requêtes SPARQL - TP1
+
+
+PREFIX : <https://w3id.org/cluedo4KG/onto#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX inst: <https://w3id.org/cluedo4KG/KG#>
+
+
+1. Quelles sont les pièces de cette maison ?
+SELECT ?nomPiece WHERE
+{
+        ?piece a :Piece .
+          ?piece rdfs:label ?nomPiece .
+          ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+          FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+LIMIT 20
+
+
+=> Résultat:
+nomPiece
+salon
+bureau
+chambre
+couloir
+salle de bain
+toilette
+cuisine
+salle à manger
+hall
+2. Combien de pièces y a-t-il dans la maison ?
+SELECT (COUNT(?piece) AS ?nbrPiece)
+WHERE {
+          ?piece a :Piece .
+?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+}
+LIMIT 20
+=> Résultat: nbPiece 9
+3. Combien de personnes se trouvent dans la maison ?
+SELECT (COUNT(?person) as ?nbPerson) WHERE
+{
+        ?person a :Personne .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+        ?person :personneDansPiece ?piece .
+    
+}
+LIMIT 20
+=> Résultat: nbPerson 12
+4. Qui est la victime ?
+SELECT ?nomVictime WHERE
+{
+        ?victime a :Personne .
+          ?victime :estVivant False .
+          ?victime rdfs:label ?nomVictime .   
+}
+LIMIT 20
+
+
+=> Résultat: nomVictime Bud Luck
+
+
+5. La liste des suspects:
+SELECT ?nomSuspect WHERE
+{
+        ?suspect a :Personne .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+        ?suspect :personneDansPiece ?piece .
+          ?suspect :estVivant True .
+          ?suspect rdfs:label ?nomSuspect .
+    
+}
+LIMIT 20
+=> Résultat: 
+nomSuspect
+Dustin Time
+Anita Bath
+Paige Turner
+Sue Flay
+Claire Voyan
+Will Bury
+Mike Sir
+Mike God
+Rick O'Shea
+Sue Yu
+Ben Dover
+6. Dans quelle pièce se trouve la victime ?
+SELECT ?nomPiece WHERE
+{
+          ?piece a :Piece .
+        ?person a :Personne .
+          ?person :estVivant False .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+        ?person :personneDansPiece ?piece .
+          ?piece rdfs:label ?nomPiece .
+         FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+LIMIT 20
+=> Résultat: nomPiece chambre
+7. Y a-t-il d'autres personnes dans cette pièce ? 
+ASK
+WHERE
+{
+          ?piece a :Piece .
+          ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+  
+          ?victim a :Personne .
+          ?victim :estVivant False .
+        ?victim :personneDansPiece ?piece .
+          
+        ?person a :Personne .
+          ?person :personneDansPiece ?piece .
+          FILTER(?person != ?victim) .
+    
+}
+LIMIT 20
+
+
+
+=> Résultat: {"head" : { }, "boolean" : false}
+
+
+8. La liste des personnes présentes dans chaque pièce:
+SELECT ?nomPersonne ?nomPiece WHERE
+{
+          ?piece a :Piece .
+          ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+        ?person a :Personne .
+          ?person :personneDansPiece ?piece .
+          ?person rdfs:label ?nomPersonne .
+        ?piece rdfs:label ?nomPiece .
+          FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+LIMIT 20
+=> Résultat: nomPersonne,nomPiece
+Dustin Time,salon
+Anita Bath,salon
+Paige Turner,bureau
+Sue Flay,bureau
+Bud Luck,chambre
+Claire Voyan,salle de bain
+Will Bury,toilette
+Mike Sir,toilette
+Mike God,toilette
+Rick O'Shea,salle à manger
+Sue Yu,salle à manger
+Ben Dover,hall
+9. ​​Combien de personnes se trouvent dans chaque pièce?
+SELECT ?nomPiece (COUNT(?person) as ?nbPerson) WHERE
+{
+          ?piece a :Piece .
+        ?person a :Personne .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+          ?person :personneDansPiece ?piece .
+          ?piece rdfs:label ?nomPiece .
+          FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+GROUP BY ?nomPiece
+LIMIT 200
+=> Résultat: nomPiece,nbPerson
+salon,2
+bureau,2
+chambre,1
+salle de bain,1
+toilette,3
+salle à manger,2
+hall,1
+10. Quelle(s) chambre(s) contient(nt) au moins deux personnes ?
+SELECT ?nomPiece WHERE {
+  {
+  SELECT ?piece (COUNT(?person) as ?nbPerson) WHERE
+  {
+      ?piece a :Piece .
+      ?person a :Personne .
+      ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+      ?person :personneDansPiece ?piece .
+  }
+  GROUP BY ?piece
+  HAVING (COUNT(?person) >= 2) 
+}
+?piece rdfs:label ?nomPiece .
+FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+ORDER BY ?roomName
+LIMIT 20
+=> Résultat: nomPiece
+salon
+bureau
+toilette
+salle à manger
+11. Quelle(s) pièce(s) est (sont) vide(s) ?
+SELECT ?nomPiece WHERE
+{
+          ?piece a :Piece .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+          Optional {
+      ?person a :Personne .
+      ?person :personneDansPiece ?piece .
+        }
+          ?piece rdfs:label ?nomPiece .
+          FILTER(langMatches(lang(?nomPiece), "fr")) .
+}
+GROUP BY ?nomPiece
+HAVING (COUNT(?person) = 0)
+LIMIT 20
+
+
+=> Résultat: nomPiece
+couloir
+cuisine
+12. Quels sont les autres suspects ?
+SELECT ?nomPerson WHERE
+{
+          ?piece a :Piece .
+        ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+        ?person a :Personne .
+        ?person :personneDansPiece ?piece .
+          ?person rdfs:label ?nomPerson .
+          FILTER(STRENDS(?nomPerson, "n") || CONTAINS(?nomPerson , "n ")) .
+}
+=> Résultat:  nomPerson
+Dustin Time
+Claire Voyan
+Ben Dover
+13. Qui est donc innocent ?
+SELECT ?nomPerson WHERE
+{
+          ?piece a :Piece .
+          ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+          ?pieceVoisine a :Piece .
+        ?person a :Personne .
+          ?victim a :Personne .
+          ?victim :estVivant False .
+          ?victim :personneDansPiece ?piece .
+          ?piece :aPourPieceVoisine ?pieceVoisine .
+          ?person :personneDansPiece ?pieceVoisine .
+          ?person rdfs:label ?nomPerson .
+}
+LIMIT 20
+=> Résultat:  nomPerson
+Paige Turner
+Sue Flay
+Claire Voyan
+Will Bury
+Mike Sir
+Mike God
+14. Quels sont les autres suspects ?
+SELECT DISTINCT ?nomSuspects WHERE
+{
+          ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+  
+          ?suspectPieces a :Piece .
+          ?suspectPieces :pieceDansMaison inst:LaMaisonDuMeurtre .
+  
+          ?victim a :Personne .
+          ?victim :estVivant False .
+          ?victim :personneDansPiece ?piece .
+          
+          ?pieceVoisine :aPourPieceVoisine ?piece .
+  
+          ?suspects a :Personne .
+          ?suspects :personneDansPiece ?suspectPieces .
+          ?suspects rdfs:label ?nomSuspects .
+  
+          FILTER (?suspects != ?victim)
+          FILTER (?suspectPieces != ?piece) 
+    FILTER NOT EXISTS {
+              ?suspectPieces :aPourPieceVoisine ?piece .
+    }        
+}
+=> Résultat: nomSuspects : 
+Dustin Time
+Anita Bath
+Rick O'Shea
+Sue Yu
+Ben Dover
+15. Combien y a-t-il d'objets dans la maison ?
+SELECT (COUNT(?objet) as ?nbObjet) WHERE
+{        
+  ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .        
+  ?objet a :Objet .
+  ?piece :pieceContientObjet ?objet .
+ }
+=> Résultat: nbObjet 10
+16. Quels objets ne peuvent pas être l'arme du crime ?
+SELECT ?nomObjet WHERE
+{ ?piece a :Piece .
+  ?person a :Personne .
+  ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+  ?person :estVivant False .
+  ?person :personneDansPiece ?piece .          
+  ?objet a :Objet .
+   ?piece :pieceContientObjet ?objet .
+    ?objet rdfs:label ?nomObjet .
+  FILTER(langMatches(lang(?nomObjet), "fr")) .
+  }
+=> Résultat: nomObjet
+oreiller
+poignard
+
+
+17. Quel est l'arme du crime ?
+SELECT ?nomObjet WHERE
+{ ?piece a :Piece .
+  ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+  FILTER NOT EXISTS {
+        ?person a :Personne ;
+                 :personneDansPiece ?piece .
+    }        
+  ?objet a :Objet .
+  ?piece :pieceContientObjet ?objet .
+  ?objet rdfs:label ?nomObjet .
+  FILTER(langMatches(lang(?nomObjet), "fr")) .
+  }
+=> Résultat:  nomObjet pic à glace
+
+
+18. Qui est le meurtrier ?
+SELECT DISTINCT ?nomSuspect WHERE {
+  ?victime a :Personne .
+  ?victime :estVivant false .
+  ?victimPiece a :Piece .
+  ?victime :personneDansPiece ?victimPiece .
+  ?piece a :Piece .
+  ?piece :pieceDansMaison inst:LaMaisonDuMeurtre .
+  ?suspect a :Personne .
+  ?suspect :estVivant true .
+  ?suspect :personneDansPiece ?piece .
+  ?suspect rdfs:label ?nomSuspect .
+  FILTER NOT EXISTS {
+    ?otherPerson a :Personne .
+    ?otherPerson :personneDansPiece ?piece .
+    FILTER (?otherPerson != ?suspect)
+  }
+  FILTER NOT EXISTS {
+    ?victimPiece :aPourPieceVoisine ?piece .
+  }
+}
+LIMIT 20
+=> Résultat:  nomSuspect Ben Dover
+19. 20. Quelle est l'IRI dans DBpedia de la ressource désignée en anglais par l'alias TBL ?
+select ?resource WHERE {
+  ?resource rdfs:label "TBL"@en .
+}
+
+
+Dans SPARKLuedo: 
+SELECT ?resource WHERE {
+  SERVICE <https://dbpedia.org/sparql> {
+    ?resource rdfs:label "TBL"@en .
+  }
+}
+LIMIT 20
+Dans SPARKLuedo:
+SELECT ?brotherName WHERE {
+  SERVICE <https://dbpedia.org/sparql> {
+    ?parent dbo:child <http://dbpedia.org/resource/Tim_Berners-Lee> .
+    ?parent dbo:child ?brother .
+    ?brother rdfs:label ?brotherName .
+    FILTER(?brother != <http://dbpedia.org/resource/Tim_Berners-Lee>)
+  }
+}
+LIMIT 1
+
+
+
+
+=> Résultat:  http://dbpedia.org/resource/TBL
+21. Quel est le prénom du complice?
+SELECT ?brotherName WHERE {
+  ?parent dbo:child <http://dbpedia.org/resource/Tim_Berners-Lee> .
+  ?parent dbo:child ?brother .
+  ?brother rdfs:label ?brotherName .
+  FILTER(LANG(?brotherName) = "en" && ?brother != <http://dbpedia.org/resource/Tim_Berners-Lee>)
+} LIMIT 1
+=> Résultat: "Mike Berners-Lee"@en => “Mike”
+22. Qui sont les complices potentiels de notre crime ? 
+SELECT ?suspectName WHERE {
+  SERVICE <https://dbpedia.org/sparql> {
+    ?suspect rdf:type dbo:Person . 
+    ?suspect rdfs:label ?suspectName .
+    FILTER(CONTAINS(LCASE(?suspectName), "mike"))
+  }
+}
+LIMIT 100
+=> Résultat: suspectName
+Captain Mikey
+Karl Kellner (Chemiker)
+Carl Scheibler (Chemiker)
+Carl Wagner (Chemiker)
+Carrot Top (Komiker)
+Caspar Neumann (Chemiker)
+Be Like Mike
+Beate Paulus (Chemikerin)
+Mike Donovan
+Professor Mike Donovan
+Professor Mike Donovan
+Robert Robertson (Chemiker)
+Robert Shapiro (Chemiker)
+Robert Watson (Chemiker)
+Robert Williams (Chemiker)
+Robin Clark (Chemiker)
+Rosie Jones (Komikerin)
+Roy Brown (Komiker)
+Rudolf Hoppe (Chemiker)
+Rudolf Leuckart (Chemiker)
+Rudolf Schmitt (Chemiker)
+Samuel Epstein (Chemiker)
+Samuel Smith (Chemiker)
+Sarah Cooper (Komikerin)
+Elaine Mikels
+Engelbert Broda (Physikochemiker)
+Enrique Almada (Komiker)
+Mike Dalton (pastur)
+Mikel III.a
+Mike Morton
+Mikel VI.a
+Mighty Mike McGee
+Mihály Mikes (politician)
+Mihály Mikes
+Mihály Mikes (soldier)
+Mike Archer
+Mike Archer (paleontologist)
+Mike Baldwin
+Mike Baldwin
+Mike Baldwin
+Mike Baldwin (motorcyclist)
+Mike Brewer (musician)
+Mike Capps (executive)
+Mike Capps (sportscaster)
+Mike Casey (labor leader)
+Mike Cooley (American football)
+Mike Cooley (musician)
+Mike Craven (American football)
+Mike Dailly
+Mike Dailly (game designer)
+Mike Dailly (lawyer)
+Mike Daniels
+Mike Daniels
+Mike Dupree (music producer)
+Mike Dyer (sportswriter)
+Mike Elliott (game designer)
+Mike Elliott (guitarist)
+Mike Fellows (musician)
+Mike FitzGerald (hurler)
+Mike Fitzgerald
+Mike Fitzgerald (game designer)
+Mike Fitzgerald (sociologist)
+Mike Glover
+Mike Glover
+Mike Glover (Ingenieur)
+Mike Glover (engineer)
+Mike Glover
+Mike Hall (journalist)
+Mike Hall (sportscaster)
+Mike Henry (businessman)
+Mike Hermann (athletic director)
+Mike Hill (mathematician)
+Mike Holland (politician)
+Mike Jacobs (Georgia politician)
+Mike Keith
+Mike Keith (mathematician)
+Mike Kelley (Drehbuchautor)
+Mike Kelley (scénariste)
+Mike Kelley (produttore)
+Mike Kelley (writer)
+Mike King (radio announcer)
+Mike King (transportation executive)
+Mike Kirkland (coach)
+Mike Landers
+Mike Landers (American football)
+Mike McCullough (politician)
+Mike McGlinchey
+Mike Mendoza
+Mike Meros
+Mike Moncrief
+Mike Moon
+Mike Morris (physicist)
+Mike Morris (politician)
+Mike Murphy (sports radio personality)
+Mike Noha
+Mike Noha
+Mike Oliver
+Mike Oliver (disability advocate)
+Mike Patterson (transport director)
+Mike Percy (musician)
+23.
+    24. Quel est l'IRI de TBL dans Wikidata ?
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+
+SELECT ?person ?personLabel WHERE {
+  ?person rdfs:label "Tim Berners-Lee"@en .
+  ?person rdfs:label ?personLabel .
+  FILTER(LANG(?personLabel) = "en")
+}
+LIMIT 1 
+=> Résultat: http://www.wikidata.org/entity/Q80
+Dans SPARKLuedo: 
+SELECT ?person WHERE {
+   SERVICE <https://query.wikidata.org/sparql> {
+     ?person rdfs:label "Tim Berners-Lee"@en .
+     ?person rdfs:label ?personLabel .
+     FILTER(LANG(?personLabel) = "en")
+   }
+}
+LIMIT 1
+
+
+     25. Quel est le nom de famille du complice ?
+PREFIX : <https://w3id.org/cluedo4KG/onto#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX inst: <https://w3id.org/cluedo4KG/KG#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+
+SELECT DISTINCT ?surname WHERE
+{
+  SERVICE <https://dbpedia.org/sparql>
+  {
+        ?iriTim dbo:alias "TBL"@en.
+        ?iriTim rdfs:label ?nameDbpedia.
+        FILTER(langMatches(lang(?nameDbpedia), "en"))
+  }
+
+
+  BIND(STRLANG(?nameDbpedia, "en") AS ?name)
+
+
+  SERVICE <https://query.wikidata.org/sparql>
+  {
+        ?iri rdfs:label ?name.
+        ?iri wdt:P31 wd:Q5.
+        ?iri wdt:P97 ?title.
+        ?title rdfs:label ?surname.
+        FILTER(LANG(?surname) = "en")
+
+
+        FILTER(langMatches(lang(?name), "en"))
+  }
+}
+
+
+Résultat: Sir
+
+
+
+
+     26. Trouvez le complice et la pièce dans laquelle il se cache !
+SELECT ?pieceName ?personName WHERE {
+     ?person a :Personne .
+     ?piece a :Piece .
+     ?person :personneDansPiece ?piece .
+     ?person rdfs:label ?personName .
+           ?piece rdfs:label ?pieceName .
+           FILTER(?personName = "Mike Sir")
+     FILTER(LANG(?pieceName) = "en")
+}
+LIMIT 10
+=> Résultat: toilet,Mike Sir

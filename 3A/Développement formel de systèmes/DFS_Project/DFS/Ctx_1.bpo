@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="66">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="65">
+        <org.eventb.core.poIdentifier name="TRAINS" org.eventb.core.type="ℙ(TRAINS)"/>
+        <org.eventb.core.poIdentifier name="TRONCONS" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="Tr1" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="Tr2" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="T1" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T2" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T3" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T4" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="reseau" org.eventb.core.type="ℙ(TRONCONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="arrets" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="p0" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poPredicate name="TRONCONT" org.eventb.core.predicate="reseau∈TRONCONS ↔ TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="TRONCONU" org.eventb.core.predicate="partition(TRAINS,{Tr1},{Tr2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#="/>
+        <org.eventb.core.poPredicate name="TRONCONV" org.eventb.core.predicate="partition(TRONCONS,{T1},{T2},{T3},{T4})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#&gt;"/>
+        <org.eventb.core.poPredicate name="TRONCONW" org.eventb.core.predicate="partition(arrets,{T1},{T2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poPredicate name="TRONCONX" org.eventb.core.predicate="arrets⊂TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="TRONCONY" org.eventb.core.predicate="p0∈TRAINS → arrets" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="TRONCONZ" org.eventb.core.predicate="card(arrets)&gt;1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="TRONCON[" org.eventb.core.predicate="p0={Tr1 ↦ T1,Tr2 ↦ T2}" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#F"/>
+        <org.eventb.core.poPredicate name="TRONCON\" org.eventb.core.predicate="card(dom(p0))=card(TRAINS)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poPredicate name="TRONCON]" org.eventb.core.predicate="∀t⦂TRONCONS·t∈TRONCONS∧¬t ↦ t∈reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="TRONCON^" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poPredicate name="TRONCON_" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau∼[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poPredicate name="TRONCON`" org.eventb.core.predicate="card(TRONCONS)=4" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poPredicate name="TRONCONa" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒reseau[{a}]∩arrets=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="TRONCONb" org.eventb.core.predicate="∀t1⦂TRONCONS,t2⦂TRONCONS·t1∈TRONCONS∧t2∈TRONCONS∧t1 ↦ t2∈reseau⇒t2 ↦ t1∉reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#N"/>
+        <org.eventb.core.poIdentifier name="WAGONS" org.eventb.core.type="ℙ(WAGONS)"/>
+        <org.eventb.core.poIdentifier name="wagon4" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon1" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon2" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon3" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagons" org.eventb.core.type="ℙ(TRAINS×ℙ(ℤ×WAGONS))"/>
+        <org.eventb.core.poIdentifier name="w0" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="taille" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="axm3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_3"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂WAGONS,t1⦂TRAINS,t2⦂TRAINS·w∈WAGONS∧t1∈TRAINS∧t2∈TRAINS⇒(t1≠t2⇒t1∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS))∧(t1≠t2∧w∈ran(wagons(t1))⇒t2∈dom(wagons))" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_4"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂TRAINS·t∈TRAINS⇒t∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_6"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(WAGONS)∧finite(TRAINS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYPCtx_3" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="wagons∈TRAINS → (1 ‥ taille → WAGONS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#+"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(WAGONS,{wagon1},{wagon2},{wagon3},{wagon4})" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#5"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taille∈ℕ" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCtx_4" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_3" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀w⦂WAGONS,t1⦂TRAINS,t2⦂TRAINS·w∈WAGONS∧t1∈TRAINS∧t2∈TRAINS⇒(t1≠t2∧w∈ran(wagons(t1))⇒w∉ran(wagons(t2)))" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCtx_6" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_4" org.eventb.core.poStamp="65">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{w⦂WAGONS·∃t⦂TRAINS·t∈TRAINS∧w∈ran(wagons(t)) ∣ w}=WAGONS" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="taille=2" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DFS/Ctx_1.bpo|org.eventb.core.poFile#Ctx_1|org.eventb.core.poPredicateSet#HYPCtx_6" org.eventb.core.poStamp="66">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(WAGONS)=taille∗card(TRAINS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="w0∈WAGONS → TRONCONS" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="w0={wagon1 ↦ T1,wagon2 ↦ T1,wagon3 ↦ T2,wagon4 ↦ T2}" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="wagons={Tr1 ↦ {1 ↦ wagon1,2 ↦ wagon2},Tr2 ↦ {1 ↦ wagon3,2 ↦ wagon4}}" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#9"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

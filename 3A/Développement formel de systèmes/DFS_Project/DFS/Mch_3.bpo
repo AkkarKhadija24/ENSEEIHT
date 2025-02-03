@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="269">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="TRAINS" org.eventb.core.type="ℙ(TRAINS)"/>
+        <org.eventb.core.poIdentifier name="TRONCONS" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="Tr1" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="Tr2" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="T1" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T2" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T3" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="T4" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="reseau" org.eventb.core.type="ℙ(TRONCONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="arrets" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="p0" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poPredicate name="TRONCONT" org.eventb.core.predicate="reseau∈TRONCONS ↔ TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="TRONCONU" org.eventb.core.predicate="partition(TRAINS,{Tr1},{Tr2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#="/>
+        <org.eventb.core.poPredicate name="TRONCONV" org.eventb.core.predicate="partition(TRONCONS,{T1},{T2},{T3},{T4})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#&gt;"/>
+        <org.eventb.core.poPredicate name="TRONCONW" org.eventb.core.predicate="partition(arrets,{T1},{T2})" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poPredicate name="TRONCONX" org.eventb.core.predicate="arrets⊂TRONCONS" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="TRONCONY" org.eventb.core.predicate="p0∈TRAINS → arrets" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="TRONCONZ" org.eventb.core.predicate="card(arrets)&gt;1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="TRONCON[" org.eventb.core.predicate="p0={Tr1 ↦ T1,Tr2 ↦ T2}" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#F"/>
+        <org.eventb.core.poPredicate name="TRONCON\" org.eventb.core.predicate="card(dom(p0))=card(TRAINS)" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poPredicate name="TRONCON]" org.eventb.core.predicate="∀t⦂TRONCONS·t∈TRONCONS∧¬t ↦ t∈reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="TRONCON^" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poPredicate name="TRONCON_" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒card(reseau∼[{a}])=1" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poPredicate name="TRONCON`" org.eventb.core.predicate="card(TRONCONS)=4" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poPredicate name="TRONCONa" org.eventb.core.predicate="∀a⦂TRONCONS·a∈arrets⇒reseau[{a}]∩arrets=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="TRONCONb" org.eventb.core.predicate="∀t1⦂TRONCONS,t2⦂TRONCONS·t1∈TRONCONS∧t2∈TRONCONS∧t1 ↦ t2∈reseau⇒t2 ↦ t1∉reseau" org.eventb.core.source="/DFS/Ctx_0.buc|org.eventb.core.contextFile#Ctx_0|org.eventb.core.axiom#N"/>
+        <org.eventb.core.poIdentifier name="WAGONS" org.eventb.core.type="ℙ(WAGONS)"/>
+        <org.eventb.core.poIdentifier name="wagon4" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon1" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon2" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagon3" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="wagons" org.eventb.core.type="ℙ(TRAINS×ℙ(ℤ×WAGONS))"/>
+        <org.eventb.core.poIdentifier name="w0" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="taille" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poPredicate name="TRONCONc" org.eventb.core.predicate="wagons∈TRAINS → (1 ‥ taille → WAGONS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#+"/>
+        <org.eventb.core.poPredicate name="TRONCONd" org.eventb.core.predicate="partition(WAGONS,{wagon1},{wagon2},{wagon3},{wagon4})" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#5"/>
+        <org.eventb.core.poPredicate name="TRONCONe" org.eventb.core.predicate="taille∈ℕ" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="TRONCONf" org.eventb.core.predicate="∀w⦂WAGONS,t1⦂TRAINS,t2⦂TRAINS·w∈WAGONS∧t1∈TRAINS∧t2∈TRAINS⇒(t1≠t2∧w∈ran(wagons(t1))⇒w∉ran(wagons(t2)))" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="TRONCONg" org.eventb.core.predicate="{w⦂WAGONS·∃t⦂TRAINS·t∈TRAINS∧w∈ran(wagons(t)) ∣ w}=WAGONS" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="TRONCONh" org.eventb.core.predicate="taille=2" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="TRONCONi" org.eventb.core.predicate="card(WAGONS)=taille∗card(TRAINS)" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="TRONCONj" org.eventb.core.predicate="w0∈WAGONS → TRONCONS" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="TRONCONk" org.eventb.core.predicate="w0={wagon1 ↦ T1,wagon2 ↦ T1,wagon3 ↦ T2,wagon4 ↦ T2}" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="TRONCONl" org.eventb.core.predicate="wagons={Tr1 ↦ {1 ↦ wagon1,2 ↦ wagon2},Tr2 ↦ {1 ↦ wagon3,2 ↦ wagon4}}" org.eventb.core.source="/DFS/Ctx_1.buc|org.eventb.core.contextFile#Ctx_1|org.eventb.core.axiom#9"/>
+        <org.eventb.core.poIdentifier name="VMAX" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="FMAX" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="a0" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aut0" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="m0" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="AMAX" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="v0" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poPredicate name="TRONCONm" org.eventb.core.predicate="VMAX∈ℕ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="TRONCONn" org.eventb.core.predicate="AMAX∈ℕ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="TRONCONo" org.eventb.core.predicate="FMAX∈ℤ∧FMAX&lt;0" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="TRONCONp" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒w0(wagons(tr)(1))=p0(tr)" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="TRONCONq" org.eventb.core.predicate="VMAX&gt;0" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="TRONCONr" org.eventb.core.predicate="card(TRAINS)=2" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="TRONCONs" org.eventb.core.predicate="v0∈TRAINS → ℕ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="TRONCONt" org.eventb.core.predicate="a0∈TRAINS → ℤ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poPredicate name="TRONCONu" org.eventb.core.predicate="m0∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poPredicate name="TRONCONv" org.eventb.core.predicate="aut0∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#9"/>
+        <org.eventb.core.poPredicate name="TRONCONw" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒v0(tr)≤VMAX∧v0(tr)≥0" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="TRONCONx" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒a0(tr)≥FMAX∧a0(tr)≤AMAX" org.eventb.core.source="/DFS/Ctx_2.buc|org.eventb.core.contextFile#Ctx_2|org.eventb.core.axiom#;"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="routeParcourue" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="trainAcceleration" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="movementAuthority" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="trainRoute" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="wagonPosition" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="trainPosition" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="modes" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="trainSpeed" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="destination" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poPredicate name="trainAcceleratioo" org.eventb.core.predicate="trainPosition∈TRAINS → TRONCONS" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.invariant#+"/>
+        <org.eventb.core.poPredicate name="trainAcceleratiop" org.eventb.core.predicate="trainRoute∈TRAINS ⇸ ℙ(TRONCONS)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poPredicate name="trainAcceleratioq" org.eventb.core.predicate="destination∈TRAINS ⇸ arrets" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poPredicate name="trainAcceleratior" org.eventb.core.predicate="routeParcourue∈TRAINS ↔ ℙ(TRONCONS)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="trainAcceleratios" org.eventb.core.predicate="wagonPosition∈WAGONS → TRONCONS" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.invariant#4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒tr∈dom(trainPosition)∧trainPosition∈TRAINS ⇸ TRONCONS∧tr∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(tr))∧wagons(tr)∈ℤ ⇸ WAGONS∧wagons(tr)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒tr∈dom(trainSpeed)∧trainSpeed∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒tr∈dom(trainAcceleration)∧trainAcceleration∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_;"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒p0(tr)=w0(wagons(tr)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="aut0∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m0∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="v0∈TRAINS → ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a0∈TRAINS → ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒v0(tr)≤VMAX∧v0(tr)≥0" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_;|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒a0(tr)≥FMAX∧a0(tr)≤AMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratioo" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="routeParcourue'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="trainPosition'" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="destination'" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="trainRoute'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="trainSpeed'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="wagonPosition'" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="modes'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="movementAuthority'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="trainAcceleration'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratioo" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratioo" org.eventb.core.poStamp="264"/>
+    <org.eventb.core.poSequent name="AssignerRoute/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂TRONCONS·train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS∧(t∈route ∖ {wagonPosition(wagons(train)(1))}⇒finite(reseau∼[{t}]∩route))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop."/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(destination)∧destination∈TRAINS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop."/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd4/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂TRONCONS·t∈route ∖ {trainPosition(train)}⇒card(reseau∼[{t}]∩route)=1" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#AssignerRoute\/grd4\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd5/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="reseau∼[{trainPosition(train)}]∩route=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#AssignerRoute\/grd5\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="trainPosition(train)∈route" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#AssignerRoute\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AssignerRoute/grd9/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬train∈dom(routeParcourue)∨route⊄routeParcourue(train)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#.|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#AssignerRoute\/grd9\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiop" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="trainRoute'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="route" org.eventb.core.type="ℙ(TRONCONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiop*" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiop" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="route⊆TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(route)&gt;1" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiop+" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop*" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀t⦂TRONCONS·t∈route ∖ {wagonPosition(wagons(train)(1))}⇒card(reseau∼[{t}]∩route)=1" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiop," org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop+" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="reseau∼[{wagonPosition(wagons(train)(1))}]∩route=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiop." org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop," org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="wagonPosition(wagons(train)(1))∈route" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="train∈dom(destination)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiop" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiop." org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="destination(train)∈route⇒reseau[{destination(train)}]∩route=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#5|org.eventb.core.guard#internal1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="AssignerDestination/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratioq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dest∉ran(destination)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#AssignerDestination\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratioq" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="destination'" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="dest" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratioq" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratioq" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="dest∈arrets" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="trainPosition(train)∈arrets" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="dest≠trainPosition(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="(train∈dom(destination)⇒trainPosition(train)=destination(train))∨train∉dom(destination)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#6|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="mouvementTete/grd7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀i⦂ℤ·train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧(i∈dom(wagons(train))⇒wagons(train)∈ℤ ⇸ WAGONS)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/grd9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior."/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS∧train∈dom(trainPosition)∧trainPosition∈TRAINS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior."/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/grd12/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior0"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(trainSpeed)∧trainSpeed∈TRAINS ⇸ ℤ∧train∈dom(trainAcceleration)∧trainAcceleration∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/grd13/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior1"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(trainSpeed)∧trainSpeed∈TRAINS ⇸ ℤ∧train∈dom(trainAcceleration)∧trainAcceleration∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal:"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒(trainPosition{train ↦ troncon_suivant})(tr)=(wagonPosition{wagons(train)(1) ↦ troncon_suivant})(wagons(tr)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#mouvementTete\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="modes{train ↦ 1}∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#mouvementTete\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="trainSpeed{train ↦ trainSpeed(train)+trainAcceleration(train)}∈TRAINS → ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#mouvementTete\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒(trainSpeed{train ↦ trainSpeed(train)+trainAcceleration(train)})(tr)≤VMAX∧(trainSpeed{train ↦ trainSpeed(train)+trainAcceleration(train)})(tr)≥0" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#mouvementTete\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_;|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementTete/act4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(trainSpeed)∧trainSpeed∈TRAINS ⇸ ℤ∧train∈dom(trainAcceleration)∧trainAcceleration∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.action#internal9"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.action#internal9"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratior"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratior" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="trainPosition'" org.eventb.core.type="ℙ(TRAINS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="wagon" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="trainRoute'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="trainSpeed'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="wagonPosition'" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="modes'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="troncon_suivant" org.eventb.core.type="TRONCONS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratior," org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratior" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="troncon_suivant∈{trainPosition(train)}∪reseau[{trainPosition(train)}]" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="troncon_suivant∉{tr⦂TRONCONS·∃tra⦂TRAINS·tra∈TRAINS∧trainPosition(tra)=tr ∣ tr}" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="train∈dom(trainRoute)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="troncon_suivant∈trainRoute(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratior." org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior," org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀i⦂ℤ·i∈dom(wagons(train))⇒wagons(train)(i)∈dom(wagonPosition)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="troncon_suivant∉ran(wagonPosition)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratior0" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior." org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="wagonPosition(wagons(train)(1))=trainPosition(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="wagon∈WAGONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratior1" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior0" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="trainSpeed(train)+trainAcceleration(train)≥0" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal8"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratior" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratior1" org.eventb.core.poStamp="267">
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="trainSpeed(train)+trainAcceleration(train)≤VMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal:"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="trainPosition(train)≠destination(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#7|org.eventb.core.guard#internal?"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="mouvementWagon/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="wagon∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS∧train∈dom(trainPosition)∧trainPosition∈TRAINS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementWagon/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧index∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#2"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementWagon/grd9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="269">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios-"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS∧train∈dom(trainPosition)∧trainPosition∈TRAINS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#5"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios-"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="mouvementWagon/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="269">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratios"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒trainPosition(tr)=(wagonPosition{wagon ↦ trainPosition(train)})(wagons(tr)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#6"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#mouvementWagon\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratios" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="wagon" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="index" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="wagonPosition'" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratios(" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratios" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratios+" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios(" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="wagonPosition(wagon)≠trainPosition(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="index∈dom(wagons(train))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="wagon∈WAGONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratios-" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios+" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="wagon=wagons(train)(index)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#2"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="index&gt;1" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratios" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratios-" org.eventb.core.poStamp="269">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="wagonPosition(wagons(train)(1))=trainPosition(train)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="train∈dom(trainPosition)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#6"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="wagon∈ran(wagons(train))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#8|org.eventb.core.guard#7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="attachWagon/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiot*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(trainPosition)∧trainPosition∈TRAINS ⇸ TRONCONS∧train∈dom(wagons)∧wagons∈TRAINS ⇸ ℙ(ℤ × WAGONS)∧1∈dom(wagons(train))∧wagons(train)∈ℤ ⇸ WAGONS∧wagons(train)(1)∈dom(wagonPosition)∧wagonPosition∈WAGONS ⇸ TRONCONS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiot*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="attachWagon/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiot"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒trainPosition(tr)=(wagonPosition{wagon ↦ trainPosition(train)})(wagons(tr)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DFS/Mch_2.bum|org.eventb.core.machineFile#Mch_2|org.eventb.core.event#7"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#attachWagon\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiot" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="wagon" org.eventb.core.type="WAGONS"/>
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="wagonPosition'" org.eventb.core.type="ℙ(WAGONS×TRONCONS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiot*" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiot" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="∀i⦂ℤ·i∈dom(wagons(train))⇒wagons(train)(i)∉dom(wagonPosition)" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="wagon∈ran(wagons(train))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiot" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiot*" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="trainPosition(train)=wagonPosition(wagons(train)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#9|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="modifierAcceleration/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="modes{train ↦ 2}∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#D"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#modifierAcceleration\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="modifierAcceleration/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="trainAcceleration{train ↦ a}∈TRAINS → ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#D"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#modifierAcceleration\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="modifierAcceleration/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒(trainAcceleration{train ↦ a})(tr)≥FMAX∧(trainAcceleration{train ↦ a})(tr)≤AMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#D"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#modifierAcceleration\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiou" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="modes'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="trainAcceleration'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiou" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiou" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#D|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="a&gt;FMAX∧a&lt;AMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#D|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="freinerTrain/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiov'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="train∈dom(trainSpeed)∧trainSpeed∈TRAINS ⇸ ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiov'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="freinerTrain/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiov"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="modes{train ↦ 2}∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#freinerTrain\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="freinerTrain/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiov"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="trainAcceleration{train ↦ FMAX}∈TRAINS → ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#freinerTrain\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="freinerTrain/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTALLHYPtrainAcceleratiov"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒(trainAcceleration{train ↦ FMAX})(tr)≥FMAX∧(trainAcceleration{train ↦ FMAX})(tr)≤AMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poSequent#freinerTrain\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiov" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="modes'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="trainAcceleration'" org.eventb.core.type="ℙ(TRAINS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPtrainAcceleratiov'" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiov" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiov" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTHYPtrainAcceleratiov'" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="trainSpeed(train)&gt;0" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.event#F|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiow" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="routeParcourue'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="troncon_actuel" org.eventb.core.type="TRONCONS"/>
+        <org.eventb.core.poIdentifier name="train" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="troncon_suivant" org.eventb.core.type="TRONCONS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiow" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiow" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train∈TRAINS" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="troncon_suivant∈{trainPosition(train)}∪reseau[{trainPosition(train)}]" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="troncon_actuel=trainPosition(train)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="troncon_suivant∉{tr⦂TRONCONS·∃tra⦂TRAINS·tra∈TRAINS∧trainPosition(tra)=tr ∣ tr}" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="train∈dom(trainRoute)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="troncon_suivant∈trainRoute(train)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(reseau[{troncon_actuel}])≥2" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#5|org.eventb.core.guard#0"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTtrainAcceleratiox" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poIdentifier name="train2" org.eventb.core.type="TRAINS"/>
+        <org.eventb.core.poIdentifier name="new_route" org.eventb.core.type="ℙ(TRONCONS)"/>
+        <org.eventb.core.poIdentifier name="trainRoute'" org.eventb.core.type="ℙ(TRAINS×ℙ(TRONCONS))"/>
+        <org.eventb.core.poIdentifier name="train1" org.eventb.core.type="TRAINS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPtrainAcceleratiox" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#EVTIDENTtrainAcceleratiox" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="train1∈TRAINS" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="train2∈TRAINS" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="train1≠train2" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="trainPosition(train1)∈reseau∼[{trainPosition(train2)}]" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="new_route⊆TRONCONS" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="card(new_route)&gt;1" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀t⦂TRONCONS·t∈new_route ∖ {trainPosition(train2)}⇒card(reseau∼[{t}]∩new_route)=1" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#2"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="reseau∼[{trainPosition(train2)}]∩new_route=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#3"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="trainPosition(train2)∈new_route" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="train2∈dom(destination)" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="destination(train2)∈new_route⇒reseau[{destination(train2)}]∩new_route=(∅ ⦂ ℙ(TRONCONS))" org.eventb.core.source="/DFS/Mch_0.bum|org.eventb.core.machineFile#Mch_0|org.eventb.core.event#2|org.eventb.core.guard#6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCtx_:" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒trainPosition(tr)=wagonPosition(wagons(tr)(1))" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#:"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="movementAuthority∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="modes∈TRAINS ⇸ ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#J"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="trainSpeed∈TRAINS → ℕ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="trainAcceleration∈TRAINS → ℤ" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#N"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCtx_;" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_:" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒trainSpeed(tr)≤VMAX∧trainSpeed(tr)≥0" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#A"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DFS/Mch_3.bpo|org.eventb.core.poFile#Mch_3|org.eventb.core.poPredicateSet#HYPCtx_;" org.eventb.core.poStamp="264">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀tr⦂TRAINS·tr∈TRAINS⇒trainAcceleration(tr)≥FMAX∧trainAcceleration(tr)≤AMAX" org.eventb.core.source="/DFS/Mch_3.bum|org.eventb.core.machineFile#Mch_3|org.eventb.core.invariant#B"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

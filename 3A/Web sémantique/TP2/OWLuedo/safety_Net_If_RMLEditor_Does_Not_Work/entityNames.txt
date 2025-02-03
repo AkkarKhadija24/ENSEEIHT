@@ -1,0 +1,26 @@
+a_une_densité
+est_morte_depuis
+est_centre_de
+personne_dans_Lieu
+personne_est_ou_a_ete_dans_lieu
+etage_contient_piece
+maison_contient_etage
+zone_organisee_objet_immobile
+piece_contient_zone
+personne_a_un_objet
+personne_a_ou_avait_un_objet
+produit
+mou
+contondant
+tranchant
+etage
+armeFeu
+zone
+liquide
+poudre
+serre (Piece)
+SerreEtage (etage)
+Ana_Conda
+Bibliothèque
+premier
+Omar_Tyr

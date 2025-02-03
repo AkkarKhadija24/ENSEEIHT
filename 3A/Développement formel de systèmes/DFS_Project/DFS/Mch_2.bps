@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="150" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementTete/grd7/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="151" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="mouvementTete/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementTete/grd9/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementTete/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementTete/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="mouvementWagon/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="attachWagon/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="attachWagon/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="attachWagon/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="attachWagon/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="151" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

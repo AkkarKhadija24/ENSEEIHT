@@ -1,0 +1,276 @@
+.column-used {
+	background-color: lightyellow;
+}
+
+.column-highlight {
+	background-color: lightgrey ;
+}
+
+.circle-icon {
+    background: white;
+    padding:1px;
+    border-radius: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.errorMessage {
+    color: red;
+    text-align: right;
+}
+
+.detailLevel .webix_label_right {
+    color: #000;
+}
+
+
+.rmlTree{
+    color: white;
+}
+/*  General tree items  */
+.rmlTree .webix_tree_item{
+    clear: both;
+    height: 35px;
+    line-height: 35px;
+    white-space: nowrap;
+    background-color: #C9CDD6;
+    padding: 0px 10px 0 0px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: move;
+    width: 200px;
+}
+.rmlTree .webix_tree_item_highlighted{
+    background-color: #3498DB;
+}
+/*  Tree items on level 1  */
+.rmlTree .webix_tree_branch_1 > .webix_tree_item{
+    background-color: #6199EC;
+}
+/*  Tree items on level 2  */
+.rmlTree .webix_tree_branch_2 > .webix_tree_item{
+    background-color: #91A5BD;
+}
+/*  Tree items on level 3  */
+.rmlTree .webix_tree_branch_3 > .webix_tree_item{
+    background-color: #B1C3D8;
+}
+
+.webix_tree_file, .webix_tree_folder, .webix_tree_folder_open {
+	display:none
+}
+
+.rmlLogo {
+	border: none;
+	background-color: transparent;
+	margin-top: -5px;
+}
+
+.rmlLogo .webix_template {
+	margin-top: -10px;
+}
+
+.rmlLogo img {
+	width: 32px;
+	height: 32px;
+}
+
+.rmlLogo .title {
+	color: #fff;
+	font-size: 40px;
+}
+
+.rmlLogo .subtitle {
+    color: #000000;
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 10px
+}
+
+.rmlLogo .tooltip {
+    visibility: hidden;
+    width: 150px;
+    margin: 5px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.rmlLogo:hover .tooltip {
+    visibility: visible;
+}
+
+.webix_view {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.webix_all_tabs {
+	padding: 0px;
+}
+
+.webix_after_all_tabs {
+	border-left: 0px;
+}
+
+.webix_item_tab {
+	-webkit-border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+}
+
+.webix_item_tab .fa-circle {
+	text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+
+
+
+pre {
+	margin: auto;
+	font-size: 12px;
+}
+
+
+/*
+ *  D3 Styling
+ */
+
+circle { stroke-width:1px; vector-effect:non-scaling-stroke }
+
+circle.edgy{
+ cursor: pointer;
+ fill:#666;
+}
+circle.edgy:hover{
+ r: 10;
+ fill:#c99;
+}
+
+text.upper-text{
+  font-size: 10px
+}
+text.middle-text{
+  font-size: 18px
+}
+text.lower-text{
+    font-size: 10px
+}
+
+line, .dragline {
+    stroke: #666;
+    stroke-width: 2px;
+    stroke-linecap: round;
+}
+
+.node .detailsG, .deleteG, .errorG, .addEdgeG, .expandG, .warnG, .addCommentG {
+	cursor: pointer
+}
+
+.hidden {
+    stroke-width: 0;
+}
+
+.detailsG, .addEdgeG, .expandG, .addCommentG {
+    fill: black
+}
+
+.deleteG {
+    fill: red
+}
+
+.errorG {
+    fill: red;
+    /* The datatable images don't respond to fill */
+    background-color: red;
+    border-radius: 50%;
+}
+
+.warnG {
+    fill: orange;
+    /* The datatable images don't respond to fill */
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.errorG.hidden, .deleteG.hidden, .detailsG.hidden, .addEdgeG.hidden, .expandG.hidden, .warnG.hidden, .addCommentG.hidden{
+    display: none
+}
+
+.tree-add-custom, .tree-update-custom, .tree-delete-custom {
+    width:20px;
+    text-align: center;
+    font-weight:bold;
+    float:right;
+    background-color:#444;
+    color:white;
+    border-radius:3px;
+}
+
+.tree-add-custom:hover, .tree-update-custom:hover, .tree-delete-custom:hover {
+    cursor: pointer;
+}
+
+.filter_button, .sort_button {
+    height: 20px;
+    float: right;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+div.error_message{
+    font-size: medium;
+    line-height: normal;
+}
+
+div.node_table{
+    font-size: small;
+    line-height: normal;
+    padding-left: 15px;
+}
+
+div.node_table:hover {
+    text-decoration: underline;
+}
+
+.selected {
+    background-color: rgb(211, 210, 210);
+}
+
+.lines {
+    color: gray;
+    cursor: pointer;
+}
+
+.lines div{
+    line-height:18px !important;
+}
+
+.singleedge-to {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
+
+
+.singleedge-from {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
